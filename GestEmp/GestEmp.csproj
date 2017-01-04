@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{032C8383-DA3C-467D-ADE2-624E08BF3D96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestEmp</RootNamespace>
+    <AssemblyName>GestEmp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\meeeetro\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\..\meeeetro\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\..\meeeetro\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmployeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeInfo.Designer.cs">
+      <DependentUpon>EmployeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccueil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAccueil.Designer.cs">
+      <DependentUpon>UCAccueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDepartement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDepartement.Designer.cs">
+      <DependentUpon>UCDepartement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EmployeInfo.resx">
+      <DependentUpon>EmployeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAccueil.resx">
+      <DependentUpon>UCAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDepartement.resx">
+      <DependentUpon>UCDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisualEditor_-_Icon_-_Close_-_white.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporting - SD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\econ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-icon-77011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statis2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultuser.png" />
+    <None Include="Resources\contactus.png" />
+    <None Include="Resources\add.png" />
+    <Content Include="Resources\list3.png" />
+    <None Include="Resources\usercamera.png" />
+    <None Include="Resources\list4.PNG" />
+    <None Include="Resources\user2.png" />
+    <None Include="Resources\user21.png" />
+    <None Include="Resources\user4.png" />
+    <None Include="Resources\user5.jpg" />
+    <None Include="Resources\user1.png" />
+    <Content Include="Resources\usericon.png" />
+    <None Include="Resources\userimagee1.PNG" />
+    <None Include="Resources\userimagee.PNG" />
+    <None Include="Resources\usericon1.png" />
+    <None Include="Resources\Private-IP-Address.png" />
+    <None Include="Resources\retour.PNG" />
+    <None Include="Resources\pexels-photo %281%29.jpg" />
+    <None Include="Resources\pexels-photo.jpg" />
+    <None Include="Resources\vider.png" />
+    <None Include="Resources\valider.PNG" />
+    <None Include="Resources\Supprimer12.png" />
+    <None Include="Resources\Modify2.PNG" />
+    <None Include="Resources\Modify1.PNG" />
+    <None Include="Resources\Modify.PNG" />
+    <None Include="Resources\Supprimer11.png" />
+    <None Include="Resources\Supprimer1.png" />
+    <None Include="Resources\list31.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
