@@ -60,10 +60,10 @@ namespace GestEmp
             // make metrotab fill the panel2
             metroTabControl1.Dock = DockStyle.Fill;
 
-            
-           
-         
 
+
+
+            MessageBox.Show("ila tal3atlek hadi safi rah khdaam ");
 
 
 
