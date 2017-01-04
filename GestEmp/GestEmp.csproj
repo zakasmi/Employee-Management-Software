@@ -80,6 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Provider.cs" />
     <Compile Include="UCAccueil.cs">
       <SubType>UserControl</SubType>
     </Compile>

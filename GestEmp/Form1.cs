@@ -14,7 +14,6 @@ namespace GestEmp
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         
-        
         public Form1()
         {
             InitializeComponent();
@@ -60,19 +59,8 @@ namespace GestEmp
             // make metrotab fill the panel2
             metroTabControl1.Dock = DockStyle.Fill;
 
-
-
-
             MessageBox.Show("Fuck l3abid");
-
-
-
         }
-
-
-        //34, 34, 34
-
-
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -109,8 +97,6 @@ namespace GestEmp
         {
 
         }
-
-      
 
         private void BTN_Accueil_Click(object sender, EventArgs e)
         {
@@ -180,7 +166,6 @@ namespace GestEmp
             panel2.Hide();
             panel1.BringToFront();
         }
-        
 
         private void pictureBox8_MouseLeave(object sender, EventArgs e)
         {
@@ -188,10 +173,6 @@ namespace GestEmp
             pictureBox8.Size = new Size(36, 36);
 
         }
-
-       
-
-      
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -373,11 +354,12 @@ namespace GestEmp
         {
 
         }
-
         private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
         {
 
         }
+
+
 
 
 
