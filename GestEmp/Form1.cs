@@ -61,9 +61,9 @@ namespace GestEmp
             metroTabControl1.Dock = DockStyle.Fill;
 
 
+            MessageBox.Show("ossas");
 
-
-            MessageBox.Show("ila tal3atlek hadi safi rah khdaam ");
+            
 
 
 
