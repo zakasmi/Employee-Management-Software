@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace GestEmp
@@ -59,7 +60,9 @@ namespace GestEmp
             // make metrotab fill the panel2
             metroTabControl1.Dock = DockStyle.Fill;
 
-            MessageBox.Show("Fuck l3abid");
+            fill_cb();
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -361,7 +364,45 @@ namespace GestEmp
 
 
 
+        private void fill_cb()
+        {
+            // fill pays combobox
+            Provider.da = new SqlDataAdapter("select nom_pay from pays", Provider.cnx);
+            Provider.da.Fill(Provider.ds, "pays");
 
+            for (int i = 0; i < Provider.ds.Tables["pays"].Rows.Count; i++)
+            {
+                CB_Ajouter_Pays.Items.Add(Provider.ds.Tables["pays"].Rows[i][0]);
+            }
+
+            // fill region all depand on pays
+
+            Provider.da = new SqlDataAdapter("select nom_region from region ",Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
+            Provider.da.Fill(Provider.ds, "region");
+
+            for (int i = 0; i < Provider.ds.Tables["region"].Rows.Count; i++)
+            {
+                CB_Ajouter_Region.Items.Add(Provider.ds.Tables["region"].Rows[i][0]);
+            }
+
+            // Fill ville all depands in region
+
+            
+
+        }
+
+        private void CB_Ajouter_Region_SelectedValueChanged(object sender, EventArgs e)
+        {
+            CB_Ajouter_Ville.Items.Clear();
+
+            Provider.da = new SqlDataAdapter("select nom_ville from ville v join region r on  v.id_region = r.id_region where nom_region = '" + CB_Ajouter_Region.SelectedItem + "'", Provider.cnx);
+            Provider.da.Fill(Provider.ds, "ville");
+
+            for (int i = 0; i < Provider.ds.Tables["ville"].Rows.Count; i++)
+            {
+                CB_Ajouter_Ville.Items.Add(Provider.ds.Tables["ville"].Rows[i][0]);
+            }
+        }
 
 
 

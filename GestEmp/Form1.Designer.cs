@@ -585,6 +585,7 @@
             this.CB_Ajouter_Region.UseCustomForeColor = true;
             this.CB_Ajouter_Region.UseSelectable = true;
             this.CB_Ajouter_Region.UseStyleColors = true;
+            this.CB_Ajouter_Region.SelectedValueChanged += new System.EventHandler(this.CB_Ajouter_Region_SelectedValueChanged);
             // 
             // CB_Ajouter_Departement
             // 
@@ -794,7 +795,7 @@
             // DTP_Ajouter_Daten
             // 
             this.DTP_Ajouter_Daten.Location = new System.Drawing.Point(151, 354);
-            this.DTP_Ajouter_Daten.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DTP_Ajouter_Daten.MinimumSize = new System.Drawing.Size(4, 29);
             this.DTP_Ajouter_Daten.Name = "DTP_Ajouter_Daten";
             this.DTP_Ajouter_Daten.Size = new System.Drawing.Size(157, 31);
             this.DTP_Ajouter_Daten.TabIndex = 4;

@@ -13,6 +13,7 @@ namespace GestEmp
         public static SqlConnection cnx = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=GestEmp01;Integrated Security=True");
         public static SqlDataAdapter da = new SqlDataAdapter();
         public static DataSet ds = new DataSet();
+        public static SqlCommandBuilder Cmb = new SqlCommandBuilder();
 
     }
 }
