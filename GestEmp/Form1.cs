@@ -365,6 +365,7 @@ namespace GestEmp
                 }
             }
         }
+        // --------------- boutton Valier Ajout
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -402,11 +403,7 @@ namespace GestEmp
             Provider.da = new SqlDataAdapter("select * from region order by ID_Region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
             Provider.da.Fill(Provider.ds, "region");
 
-            /* CB_Ajouter_Region.DataSource = Provider.ds.Tables["region"];
-             CB_Ajouter_Region.ValueMember = "ID_Region";
-             CB_Ajouter_Region.DisplayMember = "Nom_region";*/
-
-            //CB_Ajouter_Region.SelectedIndex = -1;
+        
 
             //  3) Fill ville 
             Provider.da = new SqlDataAdapter("Select * from ville order by ID_VILLE", Provider.cnx);
@@ -466,17 +463,15 @@ namespace GestEmp
         private void Fill_CB_Ajouter_Ville(string id_region)
         {
             CB_Ajouter_Ville.DataSource = null;
-
-            DataRow[] datarow = Provider.ds.Tables["ville"].Select("id_region=" + id_region);
-            
+            DataRow[] datarow = Provider.ds.Tables["ville"].Select("id_region=" + id_region);         
             DataTable table = Provider.ds.Tables["ville"].Clone();
-
             foreach (DataRow row in datarow)
                 table.ImportRow(row);
 
             CB_Ajouter_Ville.DataSource = table;
             CB_Ajouter_Ville.ValueMember = "ID_VILLE";
             CB_Ajouter_Ville.DisplayMember = "Nom_ville";
+
         }
 
 
