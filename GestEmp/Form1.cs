@@ -60,7 +60,7 @@ namespace GestEmp
             UCDepartement.instanceUCDepartement.Dock = DockStyle.Fill;
             // make metrotab fill the panel2
             metroTabControl1.Dock = DockStyle.Fill;
-
+            MessageBox.Show("hello world");
             fill_cb();
 
 
@@ -378,56 +378,108 @@ namespace GestEmp
 
         private void fill_cb()
         {
-            // fill pays combobox
-            Provider.da = new SqlDataAdapter("select nom_pay from pays", Provider.cnx);
+            // 1 )Fill pays combobox
+            Provider.da = new SqlDataAdapter("select * from pays order by ID_PAYS", Provider.cnx);
             Provider.da.Fill(Provider.ds, "pays");
 
-            for (int i = 0; i < Provider.ds.Tables["pays"].Rows.Count; i++)
-            {
-                CB_Ajouter_Pays.Items.Add(Provider.ds.Tables["pays"].Rows[i][0]);
-            }
+           //stackoverflow.com/questions/14111879/how-to-prevent-selectedindexchanged-event-when-datasource-is-bound
+            this.CB_Ajouter_Pays.SelectedValueChanged -= new EventHandler(CB_Ajouter_Pays_SelectedValueChanged);
 
-            // fill region all depand on pays
+            CB_Ajouter_Pays.DataSource = Provider.ds.Tables["pays"];
+            CB_Ajouter_Pays.ValueMember = "ID_PAYS";
+            CB_Ajouter_Pays.DisplayMember = "Nom_pays";
+            this.CB_Ajouter_Pays.SelectedValueChanged += new EventHandler(CB_Ajouter_Pays_SelectedValueChanged);
+            CB_Ajouter_Pays.SelectedIndex = -1;
+            
 
-            Provider.da = new SqlDataAdapter("select nom_region from region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
+
+            /*after you set the datasource you can't affect or add items simply 
+             like CB_Ajouter_Region.Items.Add(Provider.ds.Tables["region"].Rows[i][1]);*/
+
+
+            // 2 ) Fill region all depend on pays
+
+            Provider.da = new SqlDataAdapter("select * from region order by ID_Region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
             Provider.da.Fill(Provider.ds, "region");
 
-            for (i = 0; i < Provider.ds.Tables["region"].Rows.Count; i++)
-            {
-                CB_Ajouter_Region.Items.Add(Provider.ds.Tables["region"].Rows[i][0]);
-            }
+            /* CB_Ajouter_Region.DataSource = Provider.ds.Tables["region"];
+             CB_Ajouter_Region.ValueMember = "ID_Region";
+             CB_Ajouter_Region.DisplayMember = "Nom_region";*/
 
-            // Fill departement combobox
-            Provider.da = new SqlDataAdapter("select Dept_Nom from Departement", Provider.cnx);
+            //CB_Ajouter_Region.SelectedIndex = -1;
+
+            //  3) Fill ville 
+            Provider.da = new SqlDataAdapter("Select * from ville order by ID_VILLE", Provider.cnx);
+            Provider.da.Fill(Provider.ds, "ville");
+
+            // 4 ) Fill departement combobox
+            Provider.da = new SqlDataAdapter("select * from Departement", Provider.cnx);
             Provider.da.Fill(Provider.ds, "departement");
 
-            for (i = 0; i < Provider.ds.Tables["departement"].Rows.Count; i++ )
-            {
-                CB_Ajouter_Departement.Items.Add(Provider.ds.Tables["departement"].Rows[i][0]);
-            }
+            CB_Ajouter_Departement.ValueMember = "ID_DEPT";
+            CB_Ajouter_Departement.DisplayMember = "Dept_Nom";
+            CB_Ajouter_Departement.DataSource = Provider.ds.Tables["departement"];
+            CB_Ajouter_Departement.SelectedIndex = -1;
+
         }
 
         private void CB_Ajouter_Region_SelectedValueChanged(object sender, EventArgs e)
-        {
-                    // fill ville combobox all depends on region
-            CB_Ajouter_Ville.Items.Clear();
-
-            Provider.da = new SqlDataAdapter("select nom_ville from ville v join region r on  v.id_region = r.id_region where nom_region = '" + CB_Ajouter_Region.SelectedItem + "'", Provider.cnx);
-            
-            if(Provider.ds.Tables.Contains("ville"))
-                Provider.ds.Tables["ville"].Clear();
-
-            Provider.da.Fill(Provider.ds, "ville");
-
-            for (int i = 0; i < Provider.ds.Tables["ville"].Rows.Count; i++)
+        {             
+            if(CB_Ajouter_Region.SelectedIndex !=-1)
             {
-                CB_Ajouter_Ville.Items.Add(Provider.ds.Tables["ville"].Rows[i][0]);
+                Fill_CB_Ajouter_Ville(CB_Ajouter_Region.SelectedValue.ToString());      
             }
+            CB_Ajouter_Ville.SelectedIndex = -1;
+        }
 
+        private void CB_Ajouter_Pays_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (CB_Ajouter_Pays.SelectedIndex != -1)
+            {    
+                Fill_CB_Ajouter_region(CB_Ajouter_Pays.SelectedValue.ToString());
+            }
+            CB_Ajouter_Region.SelectedIndex = -1;
+            CB_Ajouter_Ville.DataSource = null;
+        }
+        //------------------------- function 1 Fill The CB region using an ID_Pays
+        private void Fill_CB_Ajouter_region(string ID_Pays) {
+
+            // clear the  items of CB_Ajouter_Region if it's alredy filled
+            //stackoverflow.com/questions/14376577/clear-combobox-datasource-items
+            CB_Ajouter_Region.DataSource = null;
+
+            // select the data from a datable in dataset with a condition then affect the rows to 
+            // a datarow table 
+            DataRow[] datarow = Provider.ds.Tables["region"].Select("id_pays = " + ID_Pays);
+        // create a datatable with the same shema of  the region datatable this is called cloning 
+            DataTable table = Provider.ds.Tables["region"].Clone();
+       // import the rows of the datarow to the datatable 
+            foreach (DataRow row in datarow)
+                table.ImportRow(row);
+            this.CB_Ajouter_Region.SelectedValueChanged -= new EventHandler(CB_Ajouter_Region_SelectedValueChanged);
+            CB_Ajouter_Region.DataSource = table;
+            CB_Ajouter_Region.ValueMember = "ID_Region";
+            CB_Ajouter_Region.DisplayMember = "Nom_region";
+            this.CB_Ajouter_Region.SelectedValueChanged += new EventHandler(CB_Ajouter_Region_SelectedValueChanged);
+        }
+        //------------------------- function 1 Fill The CB ville using an id_region
+        private void Fill_CB_Ajouter_Ville(string id_region)
+        {
+            CB_Ajouter_Ville.DataSource = null;
+
+            DataRow[] datarow = Provider.ds.Tables["ville"].Select("id_region=" + id_region);
+            
+            DataTable table = Provider.ds.Tables["ville"].Clone();
+
+            foreach (DataRow row in datarow)
+                table.ImportRow(row);
+
+            CB_Ajouter_Ville.DataSource = table;
+            CB_Ajouter_Ville.ValueMember = "ID_VILLE";
+            CB_Ajouter_Ville.DisplayMember = "Nom_ville";
         }
 
 
-
-        // end  of the drag -------------
+        
     }
 }
