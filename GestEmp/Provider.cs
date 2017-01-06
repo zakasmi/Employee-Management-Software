@@ -8,7 +8,7 @@ using System.Data;
 
 namespace GestEmp
 {
-    class Provider
+    public static class Provider
     {
         public static SqlConnection cnx = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=GestEmp01;Integrated Security=True");
         public static SqlDataAdapter da = new SqlDataAdapter();

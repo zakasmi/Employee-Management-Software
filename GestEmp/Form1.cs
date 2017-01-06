@@ -14,7 +14,8 @@ namespace GestEmp
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-        
+        int i;
+
         public Form1()
         {
             InitializeComponent();
@@ -260,9 +261,20 @@ namespace GestEmp
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)  // button vider - ajouter Tab
         {
-           
+            // clear all textBoxes
+            /*TXB_Ajouter_Nom.Text = "";
+            TXB_Ajouter_Prenom.Text = "";
+            TXB_Ajouter_Age.Text = "";
+            TXB_Ajouter_Ntel.Text = "";
+            TXB_Ajouter_Salaire.Text = "";
+            TXB_Ajouter_Email.Text = "";*/
+            
+            foreach (Control control in Controls)
+                if (control is MetroFramework.Controls.MetroTextBox)
+                    (control as MetroFramework.Controls.MetroTextBox).Clear();
+            
         }
 
         private void button7_MouseHover(object sender, EventArgs e)
@@ -377,35 +389,42 @@ namespace GestEmp
 
             // fill region all depand on pays
 
-            Provider.da = new SqlDataAdapter("select nom_region from region ",Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
+            Provider.da = new SqlDataAdapter("select nom_region from region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
             Provider.da.Fill(Provider.ds, "region");
 
-            for (int i = 0; i < Provider.ds.Tables["region"].Rows.Count; i++)
+            for (i = 0; i < Provider.ds.Tables["region"].Rows.Count; i++)
             {
                 CB_Ajouter_Region.Items.Add(Provider.ds.Tables["region"].Rows[i][0]);
             }
 
-            // Fill ville all depands in region
+            // Fill departement combobox
+            Provider.da = new SqlDataAdapter("select Dept_Nom from Departement", Provider.cnx);
+            Provider.da.Fill(Provider.ds, "departement");
 
-            
-
+            for (i = 0; i < Provider.ds.Tables["departement"].Rows.Count; i++ )
+            {
+                CB_Ajouter_Departement.Items.Add(Provider.ds.Tables["departement"].Rows[i][0]);
+            }
         }
 
         private void CB_Ajouter_Region_SelectedValueChanged(object sender, EventArgs e)
         {
+                    // fill ville combobox all depends on region
             CB_Ajouter_Ville.Items.Clear();
 
             Provider.da = new SqlDataAdapter("select nom_ville from ville v join region r on  v.id_region = r.id_region where nom_region = '" + CB_Ajouter_Region.SelectedItem + "'", Provider.cnx);
+            
+            if(Provider.ds.Tables.Contains("ville"))
+                Provider.ds.Tables["ville"].Clear();
+
             Provider.da.Fill(Provider.ds, "ville");
 
             for (int i = 0; i < Provider.ds.Tables["ville"].Rows.Count; i++)
             {
                 CB_Ajouter_Ville.Items.Add(Provider.ds.Tables["ville"].Rows[i][0]);
             }
+
         }
-
-
-
 
 
 
