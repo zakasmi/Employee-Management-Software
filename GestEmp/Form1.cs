@@ -368,6 +368,67 @@ namespace GestEmp
         // --------------- boutton Valier Ajout
         private void button3_Click(object sender, EventArgs e)
         {
+            DataRow row = Provider.ds.Tables["Employee"].NewRow();
+
+            /* FIRST SOLUTION :the problem of this solution is that if another user add a new row 
+             after you fill your tables in dataset . you will get different ID_EMP
+             because the new ID_EMP in the database is already incremented by another 
+             user . and the new ID_EMP in your dataset will incremented only by 1 
+
+             
+
+            //select the max value of ID_EMP from the table in dataset
+            DataRow[] max = Provider.ds.Tables["Employee"].Select("ID_EMP = max(ID_EMP)");
+            // parse the max datarow value  to an int 
+            int i = int.Parse(max[0][0].ToString());
+            MessageBox.Show(" the ID_EMP of the Current added  EMployee is " + i+1);
+
+            // assign the values of controls to the new datarow => row 
+            row[0] = i+1;*/
+
+            /*SECOND SOLUTION : reload your  Employee table after each add 
+             */
+
+            //THIRD SOLUTION : use connected mode to get the max value directly  from the database
+
+
+            /*Provider.GetNewID_EMP() returns a string that contains the Max(ID_EMP)+1
+             from the database using connected mode */
+            MessageBox.Show("the ID_EMP of the Current added  EMployee is " + Provider.GetNewID_EMP());
+            row[0] = Provider.GetNewID_EMP();
+            row[1] = TXB_Ajouter_Nom.Text;
+            row[2] = TXB_Ajouter_Prenom.Text;
+            row[9] = CB_Ajouter_Pays.SelectedValue.ToString();
+            row[10] = CB_Ajouter_Departement.SelectedValue.ToString();
+            row[11] = CB_Ajouter_Region.SelectedValue.ToString();
+            row[12] = CB_Ajouter_Ville.SelectedValue.ToString();
+
+
+            Provider.ds.Tables["Employee"].Rows.Add(row);
+            Provider.da = new SqlDataAdapter("select * from Employee", Provider.cnx);
+            Provider.Cmb = new SqlCommandBuilder(Provider.da);
+            Provider.da.Update(Provider.ds, "Employee");
+
+
+
+            /* // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
+                string a = "";     
+                foreach (DataRow row2 in Provider.ds.Tables["Employee"].Rows)
+                  {
+
+                      a += row2[0].ToString() + "  /n";
+
+                  MessageBox.Show(" "+a);
+                  }*/
+
+
+
+
+
+
+
+
+
 
         }
         private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
@@ -379,7 +440,7 @@ namespace GestEmp
 
         private void fill_cb()
         {
-            // 1 )Fill pays combobox
+            // 1 )Fill pays table of the  dataset and  combobox
             Provider.da = new SqlDataAdapter("select * from pays order by ID_PAYS", Provider.cnx);
             Provider.da.Fill(Provider.ds, "pays");
 
@@ -398,18 +459,18 @@ namespace GestEmp
              like CB_Ajouter_Region.Items.Add(Provider.ds.Tables["region"].Rows[i][1]);*/
 
 
-            // 2 ) Fill region all depend on pays
+            // 2 ) Fill region table  all depend on pays
 
             Provider.da = new SqlDataAdapter("select * from region order by ID_Region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
             Provider.da.Fill(Provider.ds, "region");
 
         
 
-            //  3) Fill ville 
+            //  3) Fill the ville  table in the dataset 
             Provider.da = new SqlDataAdapter("Select * from ville order by ID_VILLE", Provider.cnx);
             Provider.da.Fill(Provider.ds, "ville");
 
-            // 4 ) Fill departement combobox
+            // 4 ) Fill departement combobox and table 
             Provider.da = new SqlDataAdapter("select * from Departement", Provider.cnx);
             Provider.da.Fill(Provider.ds, "departement");
 
@@ -417,6 +478,12 @@ namespace GestEmp
             CB_Ajouter_Departement.DisplayMember = "Dept_Nom";
             CB_Ajouter_Departement.DataSource = Provider.ds.Tables["departement"];
             CB_Ajouter_Departement.SelectedIndex = -1;
+
+            //5 ) Fill Employee table in the dataset 
+            Provider.da = new SqlDataAdapter("select * from Employee order by ID_EMP", Provider.cnx);
+            Provider.da.Fill(Provider.ds,"Employee");
+
+
 
         }
 
@@ -473,6 +540,7 @@ namespace GestEmp
             CB_Ajouter_Ville.DisplayMember = "Nom_ville";
 
         }
+        
 
 
         

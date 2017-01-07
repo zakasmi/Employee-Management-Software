@@ -7,7 +7,7 @@ use GestEmp
 --============= Creation des tables =============--
 
 create table Employee(
-ID_EMP varchar(10) constraint PK_Employee Primary key,
+ID_EMP int identity(1,1) constraint PK_Employee Primary key,
 Nom varchar(20),
 Prenom varchar(20),
 DateN date,
@@ -15,11 +15,14 @@ Sexe char(2),
 Adress varchar(50),
 Date_Emb date,
 Salaire Money,
-Photo binary,
+Photo image,
+Id_pays int constraint FK_Employee_pays Foreign key references Pays(ID_PAYS),
 id_dept varchar(10) constraint FK_Employee_Dpt Foreign key references Departement (ID_DEPT) on delete cascade on update cascade,
-id_post varchar(10) constraint FK_Employee_poste Foreign key references poste (ID_POST)on delete cascade on update cascade,
-Id_pays int constraint FK_Employee_pays Foreign key references Pays(ID_PAYS)
+id_region int constraint FK_Employee_Region Foreign key references region (ID_Region) on delete SET NULL on update SET NULL,
+id_ville int constraint FK_Employee_Ville Foreign key references ville (ID_VILLE) on delete NO ACTION  on update NO ACTION
 )
+--id_post varchar(10) constraint FK_Employee_poste Foreign key references poste (ID_POST)on delete cascade on update cascade,
+
 
 create table pays(
 

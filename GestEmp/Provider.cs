@@ -15,5 +15,24 @@ namespace GestEmp
         public static DataSet ds = new DataSet();
         public static SqlCommandBuilder Cmb = new SqlCommandBuilder();
 
+
+
+
+
+
+        public static string GetNewID_EMP()
+        {
+
+            cnx.Open();
+            SqlCommand cmd = new SqlCommand("select max(ID_EMP)+1 from Employee", cnx);
+            string k = cmd.ExecuteScalar().ToString();
+            if (k == "") k = "0";
+            cnx.Close();
+            return k;
+        }
     }
+
+
+
+   
 }
