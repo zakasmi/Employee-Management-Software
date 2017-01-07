@@ -271,9 +271,8 @@ namespace GestEmp
             TXB_Ajouter_Salaire.Text = "";
             TXB_Ajouter_Email.Text = "";*/
 
-            foreach (Control control in Controls)
-                if (control is MetroFramework.Controls.MetroTextBox)
-                    (control as MetroFramework.Controls.MetroTextBox).Clear();
+                    ctrl.Text = "";
+            }
 
         }
 
@@ -365,9 +364,14 @@ namespace GestEmp
                 }
             }
         }
-        // --------------- boutton Valier Ajout
+
+        // --------------- boutton Valier Ajoute
+
         private void button3_Click(object sender, EventArgs e)
         {
+
+            Control_check();
+
             DataRow row = Provider.ds.Tables["Employee"].NewRow();
 
             /* FIRST SOLUTION :the problem of this solution is that if another user add a new row 
@@ -420,16 +424,6 @@ namespace GestEmp
 
                   MessageBox.Show(" "+a);
                   }*/
-
-
-
-
-
-
-
-
-
-
         }
         private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
         {
@@ -464,7 +458,7 @@ namespace GestEmp
             Provider.da = new SqlDataAdapter("select * from region order by ID_Region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
             Provider.da.Fill(Provider.ds, "region");
 
-
+        
 
             //  3) Fill the ville  table in the dataset 
             Provider.da = new SqlDataAdapter("Select * from ville order by ID_VILLE", Provider.cnx);
@@ -505,6 +499,7 @@ namespace GestEmp
             CB_Ajouter_Region.SelectedIndex = -1;
             CB_Ajouter_Ville.DataSource = null;
         }
+
         //------------------------- function 1 Fill The CB region using an ID_Pays
         private void Fill_CB_Ajouter_region(string ID_Pays)
         {
@@ -527,7 +522,9 @@ namespace GestEmp
             CB_Ajouter_Region.DisplayMember = "Nom_region";
             this.CB_Ajouter_Region.SelectedValueChanged += new EventHandler(CB_Ajouter_Region_SelectedValueChanged);
         }
+
         //------------------------- function 1 Fill The CB ville using an id_region
+
         private void Fill_CB_Ajouter_Ville(string id_region)
         {
             CB_Ajouter_Ville.DataSource = null;
