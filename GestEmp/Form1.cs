@@ -14,7 +14,7 @@ namespace GestEmp
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-        int i;
+       
 
         public Form1()
         {
@@ -271,10 +271,10 @@ namespace GestEmp
             TXB_Ajouter_Salaire.Text = "";
             TXB_Ajouter_Email.Text = "";*/
 
-                    ctrl.Text = "";
+                    //ctrl.Text = "";
             }
 
-        }
+        
 
         private void button7_MouseHover(object sender, EventArgs e)
         {
@@ -369,9 +369,10 @@ namespace GestEmp
 
         private void button3_Click(object sender, EventArgs e)
         {
+            bool vide = false;
 
-            Control_check();
-
+            vide= Control_check();
+            if (vide == true) { 
             DataRow row = Provider.ds.Tables["Employee"].NewRow();
 
             /* FIRST SOLUTION :the problem of this solution is that if another user add a new row 
@@ -402,10 +403,17 @@ namespace GestEmp
             row[0] = Provider.GetNewID_EMP();
             row[1] = TXB_Ajouter_Nom.Text;
             row[2] = TXB_Ajouter_Prenom.Text;
-            row[9] = CB_Ajouter_Pays.SelectedValue.ToString();
-            row[10] = CB_Ajouter_Departement.SelectedValue.ToString();
-            row[11] = CB_Ajouter_Region.SelectedValue.ToString();
-            row[12] = CB_Ajouter_Ville.SelectedValue.ToString();
+            row[3] = DTP_Ajouter_Daten.Value;
+                if (RD_Ajouter_M.Checked) row[4] = "M";
+                 else row[4] = "F";
+            row[5] = TXB_Ajouter_Adresse.Text;
+                row[6] = TXB_Ajouter_Age.Text;
+                row[7] = TXB_Ajouter_Ntel.Text;
+            row[9] = TXB_Ajouter_Salaire.Text;
+            row[11] = CB_Ajouter_Pays.SelectedValue.ToString();
+            row[12] = CB_Ajouter_Departement.SelectedValue.ToString();
+            row[13] = CB_Ajouter_Region.SelectedValue.ToString();
+            row[14] = CB_Ajouter_Ville.SelectedValue.ToString();
 
 
             Provider.ds.Tables["Employee"].Rows.Add(row);
@@ -415,15 +423,16 @@ namespace GestEmp
 
 
 
-            /* // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
-                string a = "";     
-                foreach (DataRow row2 in Provider.ds.Tables["Employee"].Rows)
-                  {
+                /* // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
+                    string a = "";     
+                    foreach (DataRow row2 in Provider.ds.Tables["Employee"].Rows)
+                      {
 
-                      a += row2[0].ToString() + "  /n";
+                          a += row2[0].ToString() + "  /n";
 
-                  MessageBox.Show(" "+a);
-                  }*/
+                      MessageBox.Show(" "+a);
+                      }*/
+            }
         }
         private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
         {
@@ -538,8 +547,49 @@ namespace GestEmp
             CB_Ajouter_Ville.DisplayMember = "Nom_ville";
 
         }
+        public bool Control_check()
+        {
+            int i = 0;
+            bool bol = true;
+            foreach (Control ctrl in metroTabPage1.Controls)
+            {
+                if (ctrl is MetroFramework.Controls.MetroTextBox)
+                {
+                    if (ctrl.Text == "")
+                    {
+                        MessageBox.Show("Veuillez remplir tout les champs", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        bol = false;
+                        break;
+                    }
+                }
+                if (ctrl is MetroFramework.Controls.MetroComboBox)
+                {
+                    var ctr2 = ctrl as MetroFramework.Controls.MetroComboBox;
+                    if (ctr2.SelectedIndex==-1)
+                    {
+                        MessageBox.Show("Veuillez selectionner les combobox", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        bol = false;
+                        break;
+                    }
+                }
+                if (ctrl is MetroFramework.Controls.MetroRadioButton)
+                {
+                    var ctr2 = ctrl as MetroFramework.Controls.MetroRadioButton;
+                   
+                        if (!ctr2.Checked)
+                    {
+                        i++; 
+                    }
+                    if (i >= 2) {
+                        MessageBox.Show("Veuillez cocher une radiobutton", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        bol = false;
+                        break;
+                    }
+                }
 
-
+            }
+            return bol;
+        }
 
 
     }

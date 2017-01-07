@@ -26,7 +26,7 @@ namespace GestEmp
             cnx.Open();
             SqlCommand cmd = new SqlCommand("select max(ID_EMP)+1 from Employee", cnx);
             string k = cmd.ExecuteScalar().ToString();
-            if (k == "") k = "0";
+            if (k == "") k = "1";
             cnx.Close();
             return k;
         }

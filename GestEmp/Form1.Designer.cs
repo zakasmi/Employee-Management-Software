@@ -796,7 +796,7 @@
             // DTP_Ajouter_Daten
             // 
             this.DTP_Ajouter_Daten.Location = new System.Drawing.Point(151, 354);
-            this.DTP_Ajouter_Daten.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DTP_Ajouter_Daten.MinimumSize = new System.Drawing.Size(4, 29);
             this.DTP_Ajouter_Daten.Name = "DTP_Ajouter_Daten";
             this.DTP_Ajouter_Daten.Size = new System.Drawing.Size(157, 31);
             this.DTP_Ajouter_Daten.TabIndex = 4;
