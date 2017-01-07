@@ -89,28 +89,6 @@ sp_addrolemember 'db_owner','u_Usef';
 
 insert into pays values 
 ('Morroco')
-GO
-SET IDENTITY_INSERT [dbo].[pays] ON 
-
-INSERT [dbo].[pays] ([ID_PAYS], [Nom_pays]) VALUES (3, N'france')
-SET IDENTITY_INSERT [dbo].[pays] OFF
-SET IDENTITY_INSERT [dbo].[region] ON 
-INSERT [dbo].[region] ([ID_Region], [Nom_region], [id_pays]) VALUES (20, N'region Lile', 3)
-INSERT [dbo].[region] ([ID_Region], [Nom_region], [id_pays]) VALUES (21, N'region nice', 3)
-INSERT [dbo].[region] ([ID_Region], [Nom_region], [id_pays]) VALUES (19, N'region Paris', 3)
-
-SET IDENTITY_INSERT [dbo].[region] OFF
-SET IDENTITY_INSERT [dbo].[ville] ON 
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1016, N'Nica', 21)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1014, N'Nice', 21)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1018, N'eiffel', 19)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1017, N'Paris', 19)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1013, N'Lile', 20)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1015, N'Loula', 20)
-SET IDENTITY_INSERT [dbo].[ville] OFF
-
-
-
 
 insert into region values 
 ('Oued Ed-Dahab - Lagouira',1),
