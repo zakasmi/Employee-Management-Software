@@ -375,31 +375,28 @@ namespace GestEmp
             if (vide == true) { 
             DataRow row = Provider.ds.Tables["Employee"].NewRow();
 
-            /* FIRST SOLUTION :the problem of this solution is that if another user add a new row 
-             after you fill your tables in dataset . you will get different ID_EMP
-             because the new ID_EMP in the database is already incremented by another 
-             user . and the new ID_EMP in your dataset will incremented only by 1 
-
-             
-
-            //select the max value of ID_EMP from the table in dataset
-            DataRow[] max = Provider.ds.Tables["Employee"].Select("ID_EMP = max(ID_EMP)");
-            // parse the max datarow value  to an int 
-            int i = int.Parse(max[0][0].ToString());
-            MessageBox.Show(" the ID_EMP of the Current added  EMployee is " + i+1);
-
-            // assign the values of controls to the new datarow => row 
-            row[0] = i+1;*/
-
-            /*SECOND SOLUTION : reload your  Employee table after each add 
-             */
-
-            //THIRD SOLUTION : use connected mode to get the max value directly  from the database
+                /* FIRST SOLUTION :the problem of this solution is that if another user add a new row 
+                 after you fill your tables in dataset . you will get different ID_EMP
+                 because the new ID_EMP in the database is already incremented by another 
+                 user . and the new ID_EMP in your dataset will incremented only by 1 
 
 
-            /*Provider.GetNewID_EMP() returns a string that contains the Max(ID_EMP)+1
-             from the database using connected mode */
-            MessageBox.Show("the ID_EMP of the Current added  EMployee is " + Provider.GetNewID_EMP());
+
+                //select the max value of ID_EMP from the table in dataset
+                DataRow[] max = Provider.ds.Tables["Employee"].Select("ID_EMP = max(ID_EMP)");
+                // parse the max datarow value  to an int 
+                int i = int.Parse(max[0][0].ToString());
+                MessageBox.Show(" the ID_EMP of the Current added  EMployee is " + i+1);
+
+                // assign the values of controls to the new datarow => row 
+                row[0] = i+1;*/
+
+                // SECOND SOLUTION : use connected mode to get the max value directly  from the database
+
+
+                /*Provider.GetNewID_EMP() returns a string that contains the Max(ID_EMP)+1
+                 from the database using connected mode */
+                MessageBox.Show("the ID_EMP of the Current added  EMployee is " + Provider.GetNewID_EMP());
             row[0] = Provider.GetNewID_EMP();
             row[1] = TXB_Ajouter_Nom.Text;
             row[2] = TXB_Ajouter_Prenom.Text;
@@ -407,7 +404,7 @@ namespace GestEmp
                 if (RD_Ajouter_M.Checked) row[4] = "M";
                  else row[4] = "F";
             row[5] = TXB_Ajouter_Adresse.Text;
-                row[6] = TXB_Ajouter_Age.Text;
+            row[6] = TXB_Ajouter_Age.Text;
                 row[7] = TXB_Ajouter_Ntel.Text;
             row[9] = TXB_Ajouter_Salaire.Text;
             row[11] = CB_Ajouter_Pays.SelectedValue.ToString();
@@ -415,15 +412,18 @@ namespace GestEmp
             row[13] = CB_Ajouter_Region.SelectedValue.ToString();
             row[14] = CB_Ajouter_Ville.SelectedValue.ToString();
 
-
+           /*THIRD SOLUTION : reload your  Employee table after each add 
+                     */
+            
             Provider.ds.Tables["Employee"].Rows.Add(row);
             Provider.da = new SqlDataAdapter("select * from Employee", Provider.cnx);
             Provider.Cmb = new SqlCommandBuilder(Provider.da);
             Provider.da.Update(Provider.ds, "Employee");
+            Provider.da.Fill(Provider.ds,"Employee");
 
 
 
-                /* // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
+                 // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
                     string a = "";     
                     foreach (DataRow row2 in Provider.ds.Tables["Employee"].Rows)
                       {
@@ -431,7 +431,7 @@ namespace GestEmp
                           a += row2[0].ToString() + "  /n";
 
                       MessageBox.Show(" "+a);
-                      }*/
+                      }
             }
         }
         private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
@@ -591,6 +591,9 @@ namespace GestEmp
             return bol;
         }
 
+        private void metroTabPage4_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
