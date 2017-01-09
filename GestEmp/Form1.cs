@@ -60,7 +60,7 @@ namespace GestEmp
             UCDepartement.instanceUCDepartement.Dock = DockStyle.Fill;
             // make metrotab fill the panel2
             metroTabControl1.Dock = DockStyle.Fill;
-            MessageBox.Show("hello world");
+           // MessageBox.Show("hello world");
             fill_cb();
 
 
@@ -263,6 +263,7 @@ namespace GestEmp
 
         private void button4_Click(object sender, EventArgs e)  // button vider - ajouter Tab
         {
+            Clear_metroTabPage1();
             // clear all textBoxes
             /*TXB_Ajouter_Nom.Text = "";
             TXB_Ajouter_Prenom.Text = "";
@@ -271,19 +272,19 @@ namespace GestEmp
             TXB_Ajouter_Salaire.Text = "";
             TXB_Ajouter_Email.Text = "";*/
 
-                    //ctrl.Text = "";
-            }
+            //ctrl.Text = "";
+        }
 
         
 
         private void button7_MouseHover(object sender, EventArgs e)
         {
-            button7.Size = new Size(30, 28);
+          //  button7.Size = new Size(30, 28);
         }
 
         private void button7_MouseLeave(object sender, EventArgs e)
         {
-            button7.Size = new Size(27, 25);
+            //button7.Size = new Size(27, 25);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -341,6 +342,12 @@ namespace GestEmp
 
         private void button6_Click(object sender, EventArgs e)
         {
+            DataTable dt2 = new DataTable();
+            dt2 = Provider.ds.Tables["Employee"].DefaultView.ToTable(true,"Nom","Prenom","Tel","id_ville","sexe","adress");
+            //Change the column name 
+            dt2.Columns["id_ville"].ColumnName = "Ville";
+            metroGrid1.DataSource = dt2;
+            //metroGrid1.DataSource = Provider.ds.Tables["Employee"];
 
         }
 
@@ -369,69 +376,87 @@ namespace GestEmp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bool vide = false;
+            bool vide = true;
+            try
+            {
+                //vide= Control_check();
+                if (vide == true)
+                {
 
-            vide= Control_check();
-            if (vide == true) { 
-            DataRow row = Provider.ds.Tables["Employee"].NewRow();
+                    DataRow row = Provider.ds.Tables["Employee"].NewRow();
 
-                /* FIRST SOLUTION :the problem of this solution is that if another user add a new row 
-                 after you fill your tables in dataset . you will get different ID_EMP
-                 because the new ID_EMP in the database is already incremented by another 
-                 user . and the new ID_EMP in your dataset will incremented only by 1 
-
-
-
-                //select the max value of ID_EMP from the table in dataset
-                DataRow[] max = Provider.ds.Tables["Employee"].Select("ID_EMP = max(ID_EMP)");
-                // parse the max datarow value  to an int 
-                int i = int.Parse(max[0][0].ToString());
-                MessageBox.Show(" the ID_EMP of the Current added  EMployee is " + i+1);
-
-                // assign the values of controls to the new datarow => row 
-                row[0] = i+1;*/
-
-                // SECOND SOLUTION : use connected mode to get the max value directly  from the database
-
-
-                /*Provider.GetNewID_EMP() returns a string that contains the Max(ID_EMP)+1
-                 from the database using connected mode */
-                MessageBox.Show("the ID_EMP of the Current added  EMployee is " + Provider.GetNewID_EMP());
-            row[0] = Provider.GetNewID_EMP();
-            row[1] = TXB_Ajouter_Nom.Text;
-            row[2] = TXB_Ajouter_Prenom.Text;
-            row[3] = DTP_Ajouter_Daten.Value;
-                if (RD_Ajouter_M.Checked) row[4] = "M";
-                 else row[4] = "F";
-            row[5] = TXB_Ajouter_Adresse.Text;
-            row[6] = TXB_Ajouter_Age.Text;
-                row[7] = TXB_Ajouter_Ntel.Text;
-            row[9] = TXB_Ajouter_Salaire.Text;
-            row[11] = CB_Ajouter_Pays.SelectedValue.ToString();
-            row[12] = CB_Ajouter_Departement.SelectedValue.ToString();
-            row[13] = CB_Ajouter_Region.SelectedValue.ToString();
-            row[14] = CB_Ajouter_Ville.SelectedValue.ToString();
-
-           /*THIRD SOLUTION : reload your  Employee table after each add 
-                     */
-            
-            Provider.ds.Tables["Employee"].Rows.Add(row);
-            Provider.da = new SqlDataAdapter("select * from Employee", Provider.cnx);
-            Provider.Cmb = new SqlCommandBuilder(Provider.da);
-            Provider.da.Update(Provider.ds, "Employee");
-            Provider.da.Fill(Provider.ds,"Employee");
+                    Provider.da = new SqlDataAdapter("select * from Employee", Provider.cnx);
+                    /* FIRST SOLUTION :the problem of this solution is that if another user add a new row 
+                     after you fill your tables in dataset . you will get different ID_EMP
+                     because the new ID_EMP in the database is already incremented by another 
+                     user . and the new ID_EMP in your dataset will incremented only by 1 
 
 
 
-                 // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
-                    string a = "";     
+                    //select the max value of ID_EMP from the table in dataset
+                    DataRow[] max = Provider.ds.Tables["Employee"].Select("ID_EMP = max(ID_EMP)");
+                    // parse the max datarow value  to an int 
+                    int i = int.Parse(max[0][0].ToString());
+                    MessageBox.Show(" the ID_EMP of the Current added  EMployee is " + i+1);
+
+                    // assign the values of controls to the new datarow => row 
+                    row[0] = i+1;*/
+
+                    // SECOND SOLUTION : use connected mode to get the max value directly  from the database
+
+
+                    /*Provider.GetNewID_EMP() returns a string that contains the Max(ID_EMP)+1
+                     from the database using connected mode */
+                    MessageBox.Show("the ID_EMP of the Current added  Employee is " + Provider.GetNewID_EMP());
+                    //   row[0] = Provider.GetNewID_EMP();
+                    row[1] = TXB_Ajouter_Nom.Text;
+                    row[2] = TXB_Ajouter_Prenom.Text;
+                    row[3] = TXB_Ajouter_Ntel.Text;
+                    row[4] = TXB_Ajouter_Email.Text;
+                    row[5] = DTP_Ajouter_Daten.Value;
+                    row[6] = DTP_Ajouter_DateEmb.Value;
+
+                    if (RD_Ajouter_M.Checked) row[7] = "M";
+                    else row[7] = "F";
+                    row[8] = TXB_Ajouter_Salaire.Text;
+                    row[9] = TXB_Ajouter_Adresse.Text;
+                    row[10] = CB_Ajouter_Pays.SelectedValue.ToString();
+                    row[11] = CB_Ajouter_Region.SelectedValue.ToString();
+                    row[12] = CB_Ajouter_Ville.SelectedValue.ToString();
+                    row[13] = CB_Ajouter_Departement.SelectedValue.ToString();
+                    //row[14] = CB_Ajouter_Poste.SelectedValue.ToString();
+
+
+                    /*THIRD SOLUTION : reload your  Employee table after each add 
+                              */
+
+                    Provider.ds.Tables["Employee"].Rows.Add(row);
+                    Provider.Cmb = new SqlCommandBuilder(Provider.da);
+                    Provider.da.Update(Provider.ds, "Employee");
+                    // clear the table Employee => table.clear() will delete all the rows and format
+                    // table.rows.clear() will delete just rows and keep the format 
+                   
+
+/*
+                    // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
+                    string a = "";
                     foreach (DataRow row2 in Provider.ds.Tables["Employee"].Rows)
-                      {
+                    {
 
-                          a += row2[0].ToString() + "  /n";
+                        a += row2[0].ToString() + "  /n";
 
-                      MessageBox.Show(" "+a);
-                      }
+                        MessageBox.Show(" " + a);
+                    }*/
+                }
+            }
+            catch (Exception e1) {
+                MessageBox.Show(e1.Message.ToString());
+            }
+            finally {
+                Provider.ds.Tables["Employee"].Rows.Clear();
+                Provider.da.Fill(Provider.ds, "Employee");
+
+
             }
         }
         private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
@@ -444,13 +469,13 @@ namespace GestEmp
         private void fill_cb()
         {
             // 1 )Fill pays table of the  dataset and  combobox
-            Provider.da = new SqlDataAdapter("select * from pays order by ID_PAYS", Provider.cnx);
-            Provider.da.Fill(Provider.ds, "pays");
+            Provider.da = new SqlDataAdapter("select * from Pays order by ID_PAYS", Provider.cnx);
+            Provider.da.Fill(Provider.ds, "Pays");
 
             //stackoverflow.com/questions/14111879/how-to-prevent-selectedindexchanged-event-when-datasource-is-bound
             this.CB_Ajouter_Pays.SelectedValueChanged -= new EventHandler(CB_Ajouter_Pays_SelectedValueChanged);
 
-            CB_Ajouter_Pays.DataSource = Provider.ds.Tables["pays"];
+            CB_Ajouter_Pays.DataSource = Provider.ds.Tables["Pays"];
             CB_Ajouter_Pays.ValueMember = "ID_PAYS";
             CB_Ajouter_Pays.DisplayMember = "Nom_pays";
             this.CB_Ajouter_Pays.SelectedValueChanged += new EventHandler(CB_Ajouter_Pays_SelectedValueChanged);
@@ -464,14 +489,14 @@ namespace GestEmp
 
             // 2 ) Fill region table  all depend on pays
 
-            Provider.da = new SqlDataAdapter("select * from region order by ID_Region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
-            Provider.da.Fill(Provider.ds, "region");
+            Provider.da = new SqlDataAdapter("select * from Region order by ID_Region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
+            Provider.da.Fill(Provider.ds, "Region");
 
         
 
             //  3) Fill the ville  table in the dataset 
-            Provider.da = new SqlDataAdapter("Select * from ville order by ID_VILLE", Provider.cnx);
-            Provider.da.Fill(Provider.ds, "ville");
+            Provider.da = new SqlDataAdapter("Select * from Ville order by ID_VILLE", Provider.cnx);
+            Provider.da.Fill(Provider.ds, "Ville");
 
             // 4 ) Fill departement combobox and table 
             Provider.da = new SqlDataAdapter("select * from Departement", Provider.cnx);
@@ -519,9 +544,9 @@ namespace GestEmp
 
             // select the data from a datable in dataset with a condition then affect the rows to 
             // a datarow table 
-            DataRow[] datarow = Provider.ds.Tables["region"].Select("id_pays = " + ID_Pays);
+            DataRow[] datarow = Provider.ds.Tables["Region"].Select("id_pays = " + ID_Pays);
             // create a datatable with the same shema of  the region datatable this is called cloning 
-            DataTable table = Provider.ds.Tables["region"].Clone();
+            DataTable table = Provider.ds.Tables["Region"].Clone();
             // import the rows of the datarow to the datatable 
             foreach (DataRow row in datarow)
                 table.ImportRow(row);
@@ -537,8 +562,8 @@ namespace GestEmp
         private void Fill_CB_Ajouter_Ville(string id_region)
         {
             CB_Ajouter_Ville.DataSource = null;
-            DataRow[] datarow = Provider.ds.Tables["ville"].Select("id_region=" + id_region);
-            DataTable table = Provider.ds.Tables["ville"].Clone();
+            DataRow[] datarow = Provider.ds.Tables["Ville"].Select("id_region=" + id_region);
+            DataTable table = Provider.ds.Tables["Ville"].Clone();
             foreach (DataRow row in datarow)
                 table.ImportRow(row);
 
@@ -593,6 +618,37 @@ namespace GestEmp
 
         private void metroTabPage4_Click(object sender, EventArgs e)
         {
+
+        }
+        public void Clear_metroTabPage1() {
+
+            foreach (Control ctrl in metroTabPage1.Controls)
+            {
+
+                if (ctrl is MetroFramework.Controls.MetroTextBox) ctrl.Text = null;
+                if (ctrl is MetroFramework.Controls.MetroComboBox)
+                {
+                    var ctr2 = ctrl as MetroFramework.Controls.MetroComboBox;
+                    ctr2.SelectedIndex = -1;
+                }
+                if (ctrl is MetroFramework.Controls.MetroRadioButton)
+                {
+                    var ctr2 = ctrl as MetroFramework.Controls.MetroRadioButton;
+                    ctr2.Checked = false;
+                }
+                if (ctrl is MetroFramework.Controls.MetroDateTime)
+                {
+                    var ctr2 = ctrl as MetroFramework.Controls.MetroDateTime;
+                    ctr2.Value = DateTime.Now;
+                }
+                if(ctrl is PictureBox)
+                {
+                    ctrl.BackgroundImage = new Bitmap(GestEmp.Properties.Resources.user4);
+                }
+
+
+
+            }
 
         }
     }

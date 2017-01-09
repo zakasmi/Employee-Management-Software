@@ -116,6 +116,7 @@
     <EmbeddedResource Include="UCDepartement.resx">
       <DependentUpon>UCDepartement.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Provider.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

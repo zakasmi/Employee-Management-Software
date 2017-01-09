@@ -10,54 +10,55 @@ create table Employee(
 ID_EMP int identity(1,1) constraint PK_Employee Primary key,
 Nom varchar(20),
 Prenom varchar(20),
+Tel varchar(17) unique ,
+Email varchar(100),
 DateN date,
-Sexe char(2),
-Adress varchar(50),
 Date_Emb date,
-Salaire Money,
-Photo image,
+sexe char(1),
+Salaire Money default 0,
+Adress varchar(100) default null,
 Id_pays int constraint FK_Employee_pays Foreign key references Pays(ID_PAYS),
-id_dept varchar(10) constraint FK_Employee_Dpt Foreign key references Departement (ID_DEPT) on delete cascade on update cascade,
-id_region int constraint FK_Employee_Region Foreign key references region (ID_Region) on delete SET NULL on update SET NULL,
-id_ville int constraint FK_Employee_Ville Foreign key references ville (ID_VILLE) on delete NO ACTION  on update NO ACTION
+id_region int constraint FK_Employee_Region Foreign key references Region (ID_Region) on delete  cascade on update  cascade,
+id_ville int constraint FK_Employee_Ville Foreign key references Ville (ID_VILLE) ,
+id_dept int constraint FK_Employee_Dpt Foreign key references Departement (ID_DEPT) on delete cascade on update cascade,
+id_poste varchar(10) constraint FK_Employee_poste Foreign key references Poste(ID_POSTE) ,
+Photo image ,
+Age int constraint ck_age_EMP check(Age > 18 )
 )
 --id_post varchar(10) constraint FK_Employee_poste Foreign key references poste (ID_POST)on delete cascade on update cascade,
 
-
-create table pays(
-
+GO
+create table Pays(
 ID_PAYS int identity(1,1) constraint PK_Pays Primary key,
 Nom_pays nvarchar(50)
-
 )
-
-create table region (
-
+GO
+create table Region (
 ID_Region int identity (1,1) constraint PK_region Primary key,
 Nom_region nvarchar(50),
-id_pays int constraint FK_region foreign key references pays (Id_pays)
-
+id_pays int constraint FK_region foreign key references pays (ID_PAYS)
 )
+GO
 
-create table ville (
+create table Ville (
 
 ID_VILLE int identity (1,1)constraint Pk_ville Primary key,
 Nom_ville varchar(50),
-id_region int constraint FK_ville Foreign key references region(id_region) on delete cascade on update cascade
+id_region int constraint FK_ville Foreign key references Region(ID_Region) on delete cascade on update cascade
 )
 
 create table Departement (
 
-ID_DEPT varchar(10) constraint Pk_Departement Primary key,
+ID_DEPT int identity(1,1) constraint Pk_Departement Primary key,
 Dept_Nom varchar(20),
 Lieu varchar(10)
 
 )
 
-create table poste (
-
-ID_POST varchar(10) constraint Pk_poste primary key,
-Post_nom varchar(30)
+create table Poste (
+ID_POSTE varchar(10) constraint Pk_poste primary key,
+Post_nom varchar(30),
+id_dept int  constraint id_dept_departement foreign key references Departement (ID_DEPT) on delete cascade on update cascade
 )
 
 create table Compte(
@@ -90,7 +91,7 @@ sp_addrolemember 'db_owner','u_Usef';
 
 --============= Insertion =============-- 
 
-insert into pays values 
+insert into Pays values 
 ('Morroco')
 GO
 SET IDENTITY_INSERT [dbo].[pays] ON 
@@ -98,24 +99,24 @@ SET IDENTITY_INSERT [dbo].[pays] ON
 INSERT [dbo].[pays] ([ID_PAYS], [Nom_pays]) VALUES (3, N'france')
 SET IDENTITY_INSERT [dbo].[pays] OFF
 SET IDENTITY_INSERT [dbo].[region] ON 
-INSERT [dbo].[region] ([ID_Region], [Nom_region], [id_pays]) VALUES (20, N'region Lile', 3)
-INSERT [dbo].[region] ([ID_Region], [Nom_region], [id_pays]) VALUES (21, N'region nice', 3)
-INSERT [dbo].[region] ([ID_Region], [Nom_region], [id_pays]) VALUES (19, N'region Paris', 3)
+INSERT [dbo].[region] ( [Nom_region], [id_pays]) VALUES ( N'region Lile', 3)
+INSERT [dbo].[region] ( [Nom_region], [id_pays]) VALUES ( N'region nice', 3)
+INSERT [dbo].[region] ( [Nom_region], [id_pays]) VALUES ( N'region Paris', 3)
 
 SET IDENTITY_INSERT [dbo].[region] OFF
 SET IDENTITY_INSERT [dbo].[ville] ON 
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1016, N'Nica', 21)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1014, N'Nice', 21)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1018, N'eiffel', 19)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1017, N'Paris', 19)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1013, N'Lile', 20)
-INSERT [dbo].[ville] ([ID_VILLE], [Nom_ville], [id_region]) VALUES (1015, N'Loula', 20)
+INSERT [dbo].[ville] ([Nom_ville], [id_region]) VALUES ( N'Nica', 17)
+INSERT [dbo].[ville] ( [Nom_ville], [id_region]) VALUES (N'Nice', 17)
+INSERT [dbo].[ville] ( [Nom_ville], [id_region]) VALUES ( N'eiffel', 18)
+INSERT [dbo].[ville] ( [Nom_ville], [id_region]) VALUES ( N'Paris', 18)
+INSERT [dbo].[ville] ([Nom_ville], [id_region]) VALUES ( N'Lile', 19)
+INSERT [dbo].[ville] ( [Nom_ville], [id_region]) VALUES ( N'Loula', 19)
 SET IDENTITY_INSERT [dbo].[ville] OFF
 
 
 
 
-insert into region values 
+insert into Region values 
 ('Oued Ed-Dahab - Lagouira',1),
 ('Laâyoune - Boujdour - Sakia El Hamra',1),
 ('Guelmim - Es-Semara',1),
@@ -132,8 +133,8 @@ insert into region values
 ('Fès - Boulmane',1),
 ('Taza - Al Hoceima - Taounate',1),
 ('Tanger - Tétouan',1)
-
-insert into ville values 
+ 
+insert into Ville values 
 --region 1
 ('Aousserd',1),
 ('oued Eddahab',1),
@@ -371,6 +372,7 @@ insert into ville values
 ('Sidi Smaïl ',11),
 ('Youssoufia  ',11),
 --region 12
+insert into Ville values
 ('Afourar ',12),
 ('Aït Majden ',12),
 ('Azilal ',12),
@@ -507,10 +509,10 @@ insert into ville values
 ('Zinat ',16)
 
 insert into Departement values
-('DEP1','science','Oujda'),
-('DEP2','Physique','Berkan'),
-('DEP3','sport','Nador'),
-('DEP4','mechanique','Taourirt')
+('science','Oujda'),
+('Physique','Berkan'),
+('sport','Nador'),
+('mechanique','Taourirt')
 
 
 

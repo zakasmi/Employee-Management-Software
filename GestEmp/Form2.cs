@@ -67,5 +67,55 @@ namespace GestEmp
                 }
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button4_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button3_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void CB_Ajouter_Pays_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CB_Ajouter_Region_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
