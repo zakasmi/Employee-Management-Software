@@ -29,5 +29,25 @@ namespace GestEmp
         {
             this.Close();
         }
+        public static DialogResult show() {
+
+            using (EmployeInfo Emp = new EmployeInfo()) {
+
+              // Emp.Info_Nom.Text = Provider.d
+
+                return Emp.ShowDialog(); }
+
+                
+        }
+
+        private void Info_NomPrenom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Info_PosteNom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

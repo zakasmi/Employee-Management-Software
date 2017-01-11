@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
+
 namespace GestEmp
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
@@ -59,19 +60,19 @@ namespace GestEmp
             panel2.Controls.Add(UCDepartement.instanceUCDepartement);
             UCDepartement.instanceUCDepartement.Dock = DockStyle.Fill;
             // make metrotab fill the panel2
-            metroTabControl1.Dock = DockStyle.Fill;
+              metroTabControl1.Dock = DockStyle.Fill;
            // MessageBox.Show("hello world");
             fill_cb();
 
 
         }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
-        // drag the panel ------------------
+        // drag the panel ------------------------------------------------
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
@@ -96,33 +97,24 @@ namespace GestEmp
         {
             dragging = false;
         }
-        //----------------------- finish drag
+        //----------------------- finish drag---------------------------
         private void metroLabel9_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BTN_Accueil_Click(object sender, EventArgs e)
         {
-
-
             BTN_Accueil.BackColor = Color.FromArgb(0, 174, 219);
             BTN_Employe.BackColor = Color.FromArgb(34, 34, 34);
             BTN_Departement.BackColor = Color.FromArgb(34, 34, 34);
             BTN_Statistique.BackColor = Color.FromArgb(34, 34, 34);
 
-
             panel2.Hide();
             panel1.BringToFront();
-
-
-
         }
 
         private void BTN_Employe_Click(object sender, EventArgs e)
         {
-
-
             BTN_Employe.BackColor = Color.FromArgb(0, 174, 219);
             BTN_Accueil.BackColor = Color.FromArgb(34, 34, 34);
             BTN_Departement.BackColor = Color.FromArgb(34, 34, 34);
@@ -131,8 +123,6 @@ namespace GestEmp
             panel2.Show();
             panel2.BringToFront();
             metroTabControl1.BringToFront();
-
-
             //if you click on 'Employé' the image will be initialised
             /* if (!(pictureBox4.BackgroundImage == GestEmp.Properties.Resources.usericon))
              {
@@ -144,25 +134,17 @@ namespace GestEmp
 
         private void BTN_Departement_Click(object sender, EventArgs e)
         {
-
-
-
             BTN_Departement.BackColor = Color.FromArgb(0, 174, 219);
             BTN_Employe.BackColor = Color.FromArgb(34, 34, 34);
             BTN_Accueil.BackColor = Color.FromArgb(34, 34, 34);
             BTN_Statistique.BackColor = Color.FromArgb(34, 34, 34);
-
-
             panel2.Show();
             panel2.BringToFront();
-
             UCDepartement.instanceUCDepartement.BringToFront();
-
         }
 
         private void BTN_Statistique_Click(object sender, EventArgs e)
         {
-
             BTN_Statistique.BackColor = Color.FromArgb(0, 174, 219);
             BTN_Departement.BackColor = Color.FromArgb(34, 34, 34);
             BTN_Employe.BackColor = Color.FromArgb(34, 34, 34);
@@ -175,7 +157,6 @@ namespace GestEmp
         {
             pictureBox8.Image = Properties.Resources.list2;
             pictureBox8.Size = new Size(36, 36);
-
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
@@ -191,7 +172,6 @@ namespace GestEmp
         private void button2_MouseUp(object sender, MouseEventArgs e)
         {
             button2.Size = new Size(114, 35);
-
         }
 
         private void button1_MouseUp(object sender, MouseEventArgs e)
@@ -211,7 +191,6 @@ namespace GestEmp
 
         private void metroTabPage1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button3_MouseDown(object sender, MouseEventArgs e)
@@ -231,7 +210,7 @@ namespace GestEmp
 
         private void button4_MouseUp(object sender, MouseEventArgs e)
         {
-            button4.Size = new Size(124, 35);
+          button4.Size = new Size(124, 35);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -325,14 +304,54 @@ namespace GestEmp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            this.Enabled = false;
             Form2 f = new Form2();
-            f.Show();
+            f.ShowDialog(this);
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            EmployeInfo f = new EmployeInfo();
-            f.Show();
+
+            EmployeInfo emp = new EmployeInfo();
+            DataRow[] row = Provider.ds.Tables["Employee"].Select("ID_EMP="+ LBL_Mod_Sup_IdEmp.Text);
+            emp.Info_NomPrenom.Text = row[0][1].ToString() +"  "+ row[0][2].ToString();
+            emp.Info_IdEmp.Text = row[0][0].ToString();
+            //emp.Info_PosteNom.Text = 
+            
+            emp.Info_Sexe.Text = row[0][7].ToString() ;
+            emp.Info_Nom.Text = row[0][1].ToString();
+            emp.Info_Prenom.Text = row[0][2].ToString();
+            emp.Info_Tel.Text = row[0][3].ToString();
+            emp.Info_Email.Text = row[0][4].ToString();
+            emp.Info_DateN.Text = row[0][5].ToString();
+            emp.Info_DateE.Text =row[0][6].ToString();
+            emp.Info_Salaire.Text = row[0][8].ToString();
+            emp.Info_Adresse.Text = row[0][9].ToString();
+            // selet the name of Pays from Pays Table  using its ID in the Employee table 
+            var dt = Provider.ds.Tables["Pays"].AsEnumerable();
+            emp.Info_Pays.Text =( from r in dt
+                    where r.Field<int>("ID_PAYS")== int.Parse(row[0][10].ToString())
+                                 select r.Field<string>("Nom_pays")).First<string>();
+
+            dt= Provider.ds.Tables["Region"].AsEnumerable();
+            emp.Info_Region.Text = (from r in dt
+                                  where r.Field<int>("ID_Region") == int.Parse(row[0][11].ToString())
+                                  select r.Field<string>("Nom_region")).First<string>();
+            dt=Provider.ds.Tables["Ville"].AsEnumerable();
+            emp.Info_Ville.Text = (from r in dt
+                                    where r.Field<int>("ID_VILLE") == int.Parse(row[0][12].ToString())
+                                    select r.Field<string>("Nom_ville")).First<string>();
+            dt=Provider.ds.Tables["Departement"].AsEnumerable();
+            emp.Info_Departement.Text = (from r in dt
+                                   where r.Field<int>("ID_DEPT") == int.Parse(row[0][13].ToString())
+                                   select r.Field<string>("Dept_Nom")).First<string>();
+            emp.ShowDialog();
+
+
+
+
+            //.Show();
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -342,11 +361,14 @@ namespace GestEmp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DataTable dt2 = new DataTable();
-            dt2 = Provider.ds.Tables["Employee"].DefaultView.ToTable(true,"Nom","Prenom","Tel","id_ville","sexe","adress");
+            metroGrid1.DataSource = null;
+            metroGrid1.Refresh();
+            Provider.dt2 = Provider.ds.Tables["Employee"].DefaultView.ToTable(true,"ID_EMP","Nom","Prenom","Tel","id_ville","sexe","adress");
             //Change the column name 
-            dt2.Columns["id_ville"].ColumnName = "Ville";
-            metroGrid1.DataSource = dt2;
+            Provider.dt2.Columns["id_ville"].ColumnName = "Ville";
+            Provider.dt2.Columns["ID_EMP"].ColumnName = "ID Employé";
+            metroGrid1.DataSource = Provider.dt2;
+            
             //metroGrid1.DataSource = Provider.ds.Tables["Employee"];
 
         }
@@ -650,6 +672,56 @@ namespace GestEmp
 
             }
 
+        }
+
+        private void metroGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            if (i < metroGrid1.Rows.Count-1 && i>0)
+            {
+                string ID = metroGrid1.Rows[i].Cells[1].Value.ToString();
+                DataRow[] Drow = Provider.ds.Tables["Employee"].Select("ID_EMP="+ID);
+                LBL_Mod_Sup_IdEmp.Text = Drow[0][0].ToString();
+                LBL_Mod_Sup_Tel.Text = Drow[0][3].ToString();
+                LBL_Mod_Sup_Depart.Text = Drow[0][13].ToString();
+                LBL_Mod_Sup_Email.Text = Drow[0][4].ToString();
+            }
+
+        }
+        string TypeRecherche = null;
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CB_Mod_Sup_Chercher.SelectedItem.ToString() == "Numero Telephone") { TypeRecherche = "Tel"; }
+            else if (CB_Mod_Sup_Chercher.SelectedItem.ToString() == "Nom") { TypeRecherche = "Nom"; }
+            else  if(CB_Mod_Sup_Chercher.SelectedItem.ToString() == "Prénom") { TypeRecherche = "Prenom"; }
+
+        }
+
+        private void metroTextBox21_TextChanged(object sender, EventArgs e)
+        {
+            string s = "";
+            DataRow[] datarow;
+            DataTable dt = Provider.ds.Tables["Employee"].Clone();
+            if (TypeRecherche == "Tel") {
+                 s = "Tel ='" + TXB_Mod_Sup_Chercher.Text.ToString()+"' ";
+              //  MessageBox.Show(""+Provider.dt2.Rows.Count);
+            }
+            if(TypeRecherche == "Nom") {
+                 s = "Nom ='" + TXB_Mod_Sup_Chercher.Text.ToString() + "' ";
+                //  MessageBox.Show(""+Provider.dt2.Rows.Count);
+            }
+            if (TypeRecherche == "Prenom") {
+                s = "Prenom ='" + TXB_Mod_Sup_Chercher.Text.ToString() + "' ";
+                //  MessageBox.Show(""+Provider.dt2.Rows.Count);
+            }
+
+            datarow = Provider.ds.Tables["Employee"].Select(s);
+            foreach (DataRow Drow in datarow)
+                dt.ImportRow(Drow);
+        Provider.dt2 = dt.DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
+
+            metroGrid1.DataSource = Provider.dt2;
+            
         }
     }
 }

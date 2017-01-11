@@ -14,6 +14,9 @@ namespace GestEmp
         public static SqlDataAdapter da = new SqlDataAdapter();
         public static DataSet ds = new DataSet();
         public static SqlCommandBuilder Cmb = new SqlCommandBuilder();
+        public static  DataTable dt2 = new DataTable();
+
+
 
 
 

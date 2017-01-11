@@ -25,6 +25,7 @@ namespace GestEmp
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -114,6 +115,11 @@ namespace GestEmp
         }
 
         private void TXB_Ajouter_Nom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
 
         }
