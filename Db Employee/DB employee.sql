@@ -22,10 +22,11 @@ Id_pays int constraint FK_Employee_pays Foreign key references Pays(ID_PAYS),
 id_region int constraint FK_Employee_Region Foreign key references Region (ID_Region) on delete  cascade on update  cascade,
 id_ville int constraint FK_Employee_Ville Foreign key references Ville (ID_VILLE) ,
 id_dept int constraint FK_Employee_Dpt Foreign key references Departement (ID_DEPT) on delete cascade on update cascade,
-id_poste varchar(10) constraint FK_Employee_poste Foreign key references Poste(ID_POSTE) ,
+id_poste int constraint FK_Employee_poste Foreign key references Poste(ID_POSTE) ,
 Photo image ,
 Age int constraint ck_age_EMP check(Age > 18 )
 )
+
 --id_post varchar(10) constraint FK_Employee_poste Foreign key references poste (ID_POST)on delete cascade on update cascade,
 
 GO
@@ -52,15 +53,16 @@ create table Departement (
 
 ID_DEPT int identity(1,1) constraint Pk_Departement Primary key,
 Dept_Nom varchar(20),
-Lieu varchar(10)
 
 )
+
 
 create table Poste (
-ID_POSTE varchar(10) constraint Pk_poste primary key,
-Post_nom varchar(30),
+ID_POSTE int identity(1,1) constraint Pk_poste primary key,
+Post_nom varchar(50),
 id_dept int  constraint id_dept_departement foreign key references Departement (ID_DEPT) on delete cascade on update cascade
 )
+
 
 create table Compte(
 
@@ -91,7 +93,33 @@ sp_addrolemember 'db_owner','u_Usef';
 
 
 --============= Insertion =============-- 
+insert into Poste values ('Chef comptable',1),
+						('Comptable unique',1),
+						('Secrétaire comptable',1),
+						('Assistant marketing',2),
+						('Webmarketeur',2),
+						('E-reputation manager',2),
+						('Responsable merchandising',2),
+						('Responsable promotion des ventes',2),
+						('Traffic Manager',2),
+						('Directeur De Communication',3),
+						('Responsable communication en line',3),
+						('Attaché Commercial',4),
+						('CONSEILLER COMMERCIAL',4),
+						('Chef commercial',4),
+						('Web Designer',5),
+						('Développeur web',5),
+						('Développeur d’applications',5),
+						('Ingénieur Web',5)
+						
 
+
+
+
+
+
+
+						
 insert into Pays values 
 ('Morroco')
 GO
@@ -514,6 +542,22 @@ insert into Departement values
 ('Physique','Berkan'),
 ('sport','Nador'),
 ('mechanique','Taourirt')
+SET IDENTITY_INSERT [dbo].[Employee] ON 
+
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (1, N'Kasmi', N'Zakaria', N'0600000000', N'zakaria_kasmi@hotmail.fr', CAST(N'2017-01-12' AS Date), CAST(N'2017-01-10' AS Date), N'M', 500000.0000, N'lazaret oujda', 1, 8, 288, 2, 15, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (2, N'Hamid', N'Jilali', N'0611', N'Hamid@hotmail.fr', CAST(N'2017-01-02' AS Date), CAST(N'2017-01-10' AS Date), N'M', 34444.0000, N'tanger ', 1, 3, 143, 3, 12, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (3, N'oujdi', N'samir', N'0622334455', N'Samir@hotmail.fr', CAST(N'2017-01-05' AS Date), CAST(N'2017-01-12' AS Date), N'M', 34444.0000, N'Nador', 1, 5, 205, 4, 11, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (4, N'Fathi', N'Hamid', N'06334455', N'Fathi@hotmail.fr', CAST(N'2017-01-18' AS Date), CAST(N'2017-01-17' AS Date), N'M', 34444.0000, N'Fes', 1, 5, 207, 4, 8, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (5, N'Remy', N'Gaillard', N'003311', N'Remy@hotmail.fr', CAST(N'2017-01-18' AS Date), CAST(N'2017-01-17' AS Date), N'M', 34444.0000, N'Fes', 3, 19, 353, 3, 10, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (6, N'mark', N'jack', N'1022030', N'mark@hotmail.com', CAST(N'2010-02-10' AS Date), CAST(N'2017-01-18' AS Date), N'M', 67000.0000, N'Rabat', 1, 4, 153, 1, 1, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (7, N'Roz', N'Dennis', N'123456', N'Dennis@hotmail.com', CAST(N'2010-02-03' AS Date), CAST(N'2017-01-18' AS Date), N'M', 3000.0000, N'Rabat', 3, 17, 353, 4, 14, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (8, N'roza', N'andy', N'000111', N'Roza@hotmail.com', CAST(N'2010-02-03' AS Date), CAST(N'2017-01-18' AS Date), N'F', 12000.0000, N'Tetouan rue 5903', 1, 4, 153, 2, 16, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (9, N'lisa', N'braun', N'0022334', N'Lisa@hotmail.com', CAST(N'2010-02-03' AS Date), CAST(N'2017-01-18' AS Date), N'F', 1500.0000, N'Lile BV 343', 3, 17, 353, 3, 8, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (10, N'Majid', N'Hamid', N'00123', N'Majjid@hotmail.com', CAST(N'2010-02-05' AS Date), CAST(N'2017-01-18' AS Date), N'M', 25000.0000, N'Meknes BV 347', 1, 6, 215, 2, 14, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (11, N'Amine', N'Jalal', N'001235', N'Jalal@hotmail.com', CAST(N'2010-02-05' AS Date), CAST(N'2017-01-18' AS Date), N'M', 255000.0000, N'FES BV 347', 1, 6, 220, 2, 7, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (12, N'khaldi', N'Aymen', N'0012351', N'Aymen@hotmail.com', CAST(N'2010-02-05' AS Date), CAST(N'2017-01-18' AS Date), N'M', 255000.0000, N'casa BV 506', 1, 9, 309, 1, 2, NULL, NULL)
+INSERT [dbo].[Employee] ([ID_EMP], [Nom], [Prenom], [Tel], [Email], [DateN], [Date_Emb], [sexe], [Salaire], [Adress], [Id_pays], [id_region], [id_ville], [id_dept], [id_poste], [Photo], [Age]) VALUES (13, N'rajae', N'falla', N'05661', N'rajae@gmail.om', CAST(N'2017-01-11' AS Date), CAST(N'2017-01-11' AS Date), N'F', 400000.0000, N'oujda lazaret', 1, 8, 292, 2, 11, NULL, NULL)
+SET IDENTITY_INSERT [dbo].[Employee] OFF
 
 
 

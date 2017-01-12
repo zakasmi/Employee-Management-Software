@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="metroTextBox3.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TXB_Modifier_Email.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAACtCAYAAAAQ//UbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAxJklEQVR4Xu3dd7RtVZXn8eqc
@@ -334,7 +334,7 @@
         DTbYYIMNNthggw022GCDDTbYArHf+I3/DypRXKXHam1vAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="metroTextBox4.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TXB_Modifier_Salaire.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAACtCAYAAAAQ//UbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAxJklEQVR4Xu3dd7RtVZXn8eqc
@@ -550,7 +550,7 @@
         DTbYYIMNNthggw022GCDDTbYArHf+I3/DypRXKXHam1vAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="metroTextBox1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TXB_Modifier_Tel.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAACtCAYAAAAQ//UbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAxJklEQVR4Xu3dd7RtVZXn8eqc
@@ -766,7 +766,7 @@
         DTbYYIMNNthggw022GCDDTbYArHf+I3/DypRXKXHam1vAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="metroTextBox5.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TXB_Modifier_Adresse.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAACtCAYAAAAQ//UbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAxJklEQVR4Xu3dd7RtVZXn8eqc
@@ -982,7 +982,7 @@
         DTbYYIMNNthggw022GCDDTbYArHf+I3/DypRXKXHam1vAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="metroTextBox6.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TXB_Modifier_Prenom.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAACtCAYAAAAQ//UbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAxJklEQVR4Xu3dd7RtVZXn8eqc
@@ -1198,7 +1198,7 @@
         DTbYYIMNNthggw022GCDDTbYArHf+I3/DypRXKXHam1vAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="metroTextBox7.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TXB_Modifier_Nom.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAACtCAYAAAAQ//UbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAxJklEQVR4Xu3dd7RtVZXn8eqc

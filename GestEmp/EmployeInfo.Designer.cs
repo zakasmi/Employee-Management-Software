@@ -147,7 +147,7 @@
             this.Info_NomPrenom.Size = new System.Drawing.Size(139, 36);
             this.Info_NomPrenom.TabIndex = 0;
             this.Info_NomPrenom.Text = "Zakaria Kasmi";
-            this.Info_NomPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Info_NomPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Info_NomPrenom.UseCustomBackColor = true;
             this.Info_NomPrenom.UseCustomForeColor = true;
             this.Info_NomPrenom.Click += new System.EventHandler(this.Info_NomPrenom_Click);

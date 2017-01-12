@@ -213,23 +213,6 @@ namespace GestEmp
           button4.Size = new Size(124, 35);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            /* if(!panel2.Controls.Contains(UCModifier.instanceUCModifier))
-             panel2.Controls.Add(UCModifier.instanceUCModifier);
-             UCModifier.instanceUCModifier.Dock = DockStyle.Fill;
-             UCModifier.instanceUCModifier.BringToFront();
-             panel2.Location = new Point(175, 150);
-             panel2.Parent = this;
-
-             panel2.BringToFront();*/
-            Form2 f = new Form2();
-            f.Show(this);
-
-
-
-        }
-
         private void metroLabel13_Click(object sender, EventArgs e)
         {
 
@@ -304,7 +287,7 @@ namespace GestEmp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Enabled = false;
+           
             Form2 f = new Form2();
             f.ShowDialog(this);
             
@@ -318,6 +301,7 @@ namespace GestEmp
             emp.Info_NomPrenom.Text = row[0][1].ToString() +"  "+ row[0][2].ToString();
             emp.Info_IdEmp.Text = row[0][0].ToString();
             //emp.Info_PosteNom.Text = 
+
             
             emp.Info_Sexe.Text = row[0][7].ToString() ;
             emp.Info_Nom.Text = row[0][1].ToString();
@@ -346,6 +330,14 @@ namespace GestEmp
             emp.Info_Departement.Text = (from r in dt
                                    where r.Field<int>("ID_DEPT") == int.Parse(row[0][13].ToString())
                                    select r.Field<string>("Dept_Nom")).First<string>();
+
+            dt = Provider.ds.Tables["Poste"].AsEnumerable();
+
+            emp.Info_Poste.Text = (from r in dt
+                                   where r.Field<int>("ID_POSTE") == int.Parse(row[0][14].ToString())
+                                   select r.Field<string>("Post_nom")).First<string>();
+
+            emp.Info_PosteNom.Text = emp.Info_Poste.Text;
             emp.ShowDialog();
 
 
@@ -368,6 +360,13 @@ namespace GestEmp
             Provider.dt2.Columns["id_ville"].ColumnName = "Ville";
             Provider.dt2.Columns["ID_EMP"].ColumnName = "ID Employé";
             metroGrid1.DataSource = Provider.dt2;
+
+            // make all columns readonly just one columns can be edited
+            metroGrid1.ReadOnly = false;
+            for(int i=1;i<metroGrid1.Columns.Count;i++)
+            metroGrid1.Columns[i].ReadOnly = true;
+
+            metroGrid1.Columns[0].ReadOnly = false;
             
             //metroGrid1.DataSource = Provider.ds.Tables["Employee"];
 
@@ -502,6 +501,10 @@ namespace GestEmp
             CB_Ajouter_Pays.DisplayMember = "Nom_pays";
             this.CB_Ajouter_Pays.SelectedValueChanged += new EventHandler(CB_Ajouter_Pays_SelectedValueChanged);
             CB_Ajouter_Pays.SelectedIndex = -1;
+            /* you must delete the seleted value hanged event beause when you set a datasource 
+             the event launched , so the index will be -1 so there is no selected value(maybe null)
+           and you don't have a region with null value ID , so the solution is to delete the event 
+           and add it after setting the datasource */
 
 
 
@@ -522,21 +525,45 @@ namespace GestEmp
 
             // 4 ) Fill departement combobox and table 
             Provider.da = new SqlDataAdapter("select * from Departement", Provider.cnx);
-            Provider.da.Fill(Provider.ds, "departement");
+            Provider.da.Fill(Provider.ds, "Departement");
 
+            this.CB_Ajouter_Departement.SelectedValueChanged -= new EventHandler(CB_Ajouter_Departement_SelectedValueChanged);
+            CB_Ajouter_Departement.DataSource = Provider.ds.Tables["Departement"];
             CB_Ajouter_Departement.ValueMember = "ID_DEPT";
             CB_Ajouter_Departement.DisplayMember = "Dept_Nom";
-            CB_Ajouter_Departement.DataSource = Provider.ds.Tables["departement"];
+            this.CB_Ajouter_Departement.SelectedValueChanged += new EventHandler(CB_Ajouter_Departement_SelectedValueChanged);
+
+
             CB_Ajouter_Departement.SelectedIndex = -1;
 
-            //5 ) Fill Employee table in the dataset 
+
+
+            //7) fill Poste
+            Provider.da = new SqlDataAdapter("Select *from Poste order by ID_POSTE", Provider.cnx);
+            Provider.da.Fill(Provider.ds,"Poste");
+
+
+            //6 ) Fill Employee table in the dataset 
             Provider.da = new SqlDataAdapter("select * from Employee order by ID_EMP", Provider.cnx);
             Provider.da.Fill(Provider.ds, "Employee");
+
+            
 
 
 
         }
-
+        private void CB_Ajouter_Pays_SelectedValueChanged(object sender, EventArgs e)
+        {
+            // after 'vider' click . all the Combobox selected index will be set to -1
+            // and the selectedindexchanged will be launched so . so we don't need to fill 
+            // the region combobx . so you need to test first if the index !=-1
+            if (CB_Ajouter_Pays.SelectedIndex != -1)
+            {
+                Fill_CB_Ajouter_region(CB_Ajouter_Pays.SelectedValue.ToString());
+            }
+            CB_Ajouter_Region.SelectedIndex = -1;
+            CB_Ajouter_Ville.DataSource = null;
+        }
         private void CB_Ajouter_Region_SelectedValueChanged(object sender, EventArgs e)
         {
             if (CB_Ajouter_Region.SelectedIndex != -1)
@@ -546,14 +573,16 @@ namespace GestEmp
             CB_Ajouter_Ville.SelectedIndex = -1;
         }
 
-        private void CB_Ajouter_Pays_SelectedValueChanged(object sender, EventArgs e)
+      
+        private void CB_Ajouter_Departement_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (CB_Ajouter_Pays.SelectedIndex != -1)
-            {
-                Fill_CB_Ajouter_region(CB_Ajouter_Pays.SelectedValue.ToString());
+
+            if (CB_Ajouter_Departement.SelectedIndex != -1)
+            {  // MessageBox.Show("iam here");
+                Fill_CB_Ajouter_Poste(CB_Ajouter_Departement.SelectedValue.ToString());
+               
             }
-            CB_Ajouter_Region.SelectedIndex = -1;
-            CB_Ajouter_Ville.DataSource = null;
+            CB_Ajouter_Poste.SelectedIndex = -1;
         }
 
         //------------------------- function 1 Fill The CB region using an ID_Pays
@@ -592,6 +621,24 @@ namespace GestEmp
             CB_Ajouter_Ville.DataSource = table;
             CB_Ajouter_Ville.ValueMember = "ID_VILLE";
             CB_Ajouter_Ville.DisplayMember = "Nom_ville";
+
+        }
+        private void Fill_CB_Ajouter_Poste(string id_dept) {
+
+            CB_Ajouter_Poste.DataSource = null;
+            //MessageBox.Show(""+id_dept);
+            DataRow[] datarow = Provider.ds.Tables["Poste"].Select("id_dept =" + id_dept);
+            DataTable datatable = Provider.ds.Tables["Poste"].Clone();
+            foreach (DataRow Drow in datarow)
+                datatable.ImportRow(Drow);
+
+           
+            CB_Ajouter_Poste.DataSource = datatable;
+            CB_Ajouter_Poste.ValueMember = "ID_POSTE";
+            CB_Ajouter_Poste.DisplayMember = "Post_nom";
+            
+            
+
 
         }
         public bool Control_check()
@@ -677,7 +724,7 @@ namespace GestEmp
         private void metroGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
-            if (i < metroGrid1.Rows.Count-1 && i>0)
+            if (i < metroGrid1.Rows.Count && i>=0)
             {
                 string ID = metroGrid1.Rows[i].Cells[1].Value.ToString();
                 DataRow[] Drow = Provider.ds.Tables["Employee"].Select("ID_EMP="+ID);
@@ -718,10 +765,25 @@ namespace GestEmp
             datarow = Provider.ds.Tables["Employee"].Select(s);
             foreach (DataRow Drow in datarow)
                 dt.ImportRow(Drow);
-        Provider.dt2 = dt.DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
-
+            Provider.dt2 = dt.DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
+            Provider.dt2.Columns["ID_EMP"].ColumnName = "Id Employé";
+            Provider.dt2.Columns["id_ville"].ColumnName = "Ville";
             metroGrid1.DataSource = Provider.dt2;
             
+        }
+
+        private void CB_Ajouter_Poste_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach(DataRow Row in metroGrid1.Rows)
+            {
+                // 
+
+            }
         }
     }
 }

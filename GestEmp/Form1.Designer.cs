@@ -589,6 +589,7 @@
             this.CB_Ajouter_Poste.UseCustomForeColor = true;
             this.CB_Ajouter_Poste.UseSelectable = true;
             this.CB_Ajouter_Poste.UseStyleColors = true;
+            this.CB_Ajouter_Poste.SelectedIndexChanged += new System.EventHandler(this.CB_Ajouter_Poste_SelectedIndexChanged);
             // 
             // CB_Ajouter_Departement
             // 
@@ -609,6 +610,7 @@
             this.CB_Ajouter_Departement.UseCustomForeColor = true;
             this.CB_Ajouter_Departement.UseSelectable = true;
             this.CB_Ajouter_Departement.UseStyleColors = true;
+            this.CB_Ajouter_Departement.SelectedValueChanged += new System.EventHandler(this.CB_Ajouter_Departement_SelectedValueChanged);
             // 
             // CB_Ajouter_Ville
             // 
@@ -1254,7 +1256,6 @@
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(1, 196);
             this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -1279,7 +1280,6 @@
             this.Check.FillWeight = 90.55509F;
             this.Check.HeaderText = "sélectionner";
             this.Check.Name = "Check";
-            this.Check.ReadOnly = true;
             // 
             // metroLabel21
             // 
@@ -1361,6 +1361,7 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.metroToolTip1.SetToolTip(this.button2, "Supprimer un Employé ");
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button2_MouseDown);
             this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button2_MouseUp);
             // 
