@@ -11,11 +11,12 @@ namespace GestEmp
     public static class Provider
     {//Data Source=.\sqlexpress;Initial Catalog=GestEmp;Integrated Security=True
         public static SqlConnection cnx = new SqlConnection(@"Data Source=DELL;Initial Catalog=GestEmp;Integrated Security=True");
-        public static SqlDataAdapter da = new SqlDataAdapter();
+        public static SqlDataAdapter da = new SqlDataAdapter(); 
         public static DataSet ds = new DataSet();
         public static SqlCommandBuilder Cmb = new SqlCommandBuilder();
         public static  DataTable dt2 = new DataTable();
-        
+        public static DataTable dt1 = new DataTable();
+        public static DataRow[] datarow; 
 
 
 

@@ -35,16 +35,15 @@
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\GestEmp\GestEmp\bin\Debug\MetroFramework.dll</HintPath>
+      <HintPath>..\Resources\MetroFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\GestEmp\GestEmp\bin\Debug\MetroFramework.Design.dll</HintPath>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\Resources\MetroFramework.Design.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\GestEmp\GestEmp\bin\Debug\MetroFramework.Fonts.dll</HintPath>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\Resources\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,7 +66,7 @@
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
@@ -131,95 +130,69 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\close.png" />
+    <None Include="Resources\homee.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\VisualEditor_-_Icon_-_Close_-_white.svg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search-icon5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search-icon51.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\worker.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon-01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Reporting - SD.png" />
+    <None Include="Resources\contactus.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\econ.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\list-icon-77011.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\list-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\images.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\worker1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\worker2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon-011.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\worker21.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\worker3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\home2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\worker22.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\statis2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\list2.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\defaultuser.png" />
-    <None Include="Resources\contactus.png" />
-    <None Include="Resources\add.png" />
-    <Content Include="Resources\list3.png" />
-    <None Include="Resources\usercamera.png" />
     <None Include="Resources\list4.PNG" />
-    <None Include="Resources\user2.png" />
-    <None Include="Resources\user21.png" />
-    <None Include="Resources\user4.png" />
-    <None Include="Resources\user5.jpg" />
-    <None Include="Resources\user1.png" />
-    <Content Include="Resources\usericon.png" />
-    <None Include="Resources\userimagee1.PNG" />
-    <None Include="Resources\userimagee.PNG" />
-    <None Include="Resources\usericon1.png" />
-    <None Include="Resources\Private-IP-Address.png" />
-    <None Include="Resources\retour.PNG" />
-    <None Include="Resources\pexels-photo %281%29.jpg" />
-    <None Include="Resources\pexels-photo.jpg" />
-    <None Include="Resources\vider.png" />
-    <None Include="Resources\valider.PNG" />
-    <None Include="Resources\Supprimer12.png" />
-    <None Include="Resources\Modify2.PNG" />
-    <None Include="Resources\Modify1.PNG" />
-    <None Include="Resources\Modify.PNG" />
-    <None Include="Resources\Supprimer11.png" />
-    <None Include="Resources\Supprimer1.png" />
-    <None Include="Resources\list31.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-icon-77011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modify2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statis2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Supprimer12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usercamera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\valider.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisualEditor_-_Icon_-_Close_-_white.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\worker22.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

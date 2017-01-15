@@ -63,16 +63,6 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _20150831_55e46b12d72da {
-            get {
-                object obj = ResourceManager.GetObject("20150831_55e46b12d72da", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
@@ -83,29 +73,9 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close {
-            get {
-                object obj = ResourceManager.GetObject("close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap contactus {
             get {
                 object obj = ResourceManager.GetObject("contactus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap defaultuser {
-            get {
-                object obj = ResourceManager.GetObject("defaultuser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,39 +103,9 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_01 {
+        internal static System.Drawing.Bitmap homee {
             get {
-                object obj = ResourceManager.GetObject("icon-01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_011 {
-            get {
-                object obj = ResourceManager.GetObject("icon-011", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap images {
-            get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap list_icon {
-            get {
-                object obj = ResourceManager.GetObject("list-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("homee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,7 +115,7 @@ namespace GestEmp.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap list_icon_77011 {
             get {
-                object obj = ResourceManager.GetObject("list-icon-77011", resourceCulture);
+                object obj = ResourceManager.GetObject("list_icon_77011", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,39 +133,9 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap list3 {
-            get {
-                object obj = ResourceManager.GetObject("list3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap list4 {
             get {
                 object obj = ResourceManager.GetObject("list4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Modify {
-            get {
-                object obj = ResourceManager.GetObject("Modify", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Modify1 {
-            get {
-                object obj = ResourceManager.GetObject("Modify1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,69 +153,9 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pexels_photo {
-            get {
-                object obj = ResourceManager.GetObject("pexels-photo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pexels_photo__1_ {
-            get {
-                object obj = ResourceManager.GetObject("pexels-photo (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Private_IP_Address {
-            get {
-                object obj = ResourceManager.GetObject("Private-IP-Address", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Reporting___SD {
-            get {
-                object obj = ResourceManager.GetObject("Reporting - SD", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap retour {
-            get {
-                object obj = ResourceManager.GetObject("retour", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap search_icon5 {
             get {
-                object obj = ResourceManager.GetObject("search-icon5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_icon51 {
-            get {
-                object obj = ResourceManager.GetObject("search-icon51", resourceCulture);
+                object obj = ResourceManager.GetObject("search_icon5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,26 +173,6 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Supprimer1 {
-            get {
-                object obj = ResourceManager.GetObject("Supprimer1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Supprimer11 {
-            get {
-                object obj = ResourceManager.GetObject("Supprimer11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Supprimer12 {
             get {
                 object obj = ResourceManager.GetObject("Supprimer12", resourceCulture);
@@ -353,9 +183,9 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user1 {
+        internal static System.Drawing.Bitmap Undo {
             get {
-                object obj = ResourceManager.GetObject("user1", resourceCulture);
+                object obj = ResourceManager.GetObject("Undo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,19 +193,9 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user2 {
+        internal static System.Drawing.Bitmap undo2 {
             get {
-                object obj = ResourceManager.GetObject("user2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap user21 {
-            get {
-                object obj = ResourceManager.GetObject("user21", resourceCulture);
+                object obj = ResourceManager.GetObject("undo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,49 +213,9 @@ namespace GestEmp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user5 {
-            get {
-                object obj = ResourceManager.GetObject("user5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap usercamera {
             get {
                 object obj = ResourceManager.GetObject("usercamera", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap usericon {
-            get {
-                object obj = ResourceManager.GetObject("usericon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap userimagee {
-            get {
-                object obj = ResourceManager.GetObject("userimagee", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap userimagee1 {
-            get {
-                object obj = ResourceManager.GetObject("userimagee1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -465,47 +245,7 @@ namespace GestEmp.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap VisualEditor___Icon___Close___white_svg {
             get {
-                object obj = ResourceManager.GetObject("VisualEditor_-_Icon_-_Close_-_white.svg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap worker {
-            get {
-                object obj = ResourceManager.GetObject("worker", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap worker1 {
-            get {
-                object obj = ResourceManager.GetObject("worker1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap worker2 {
-            get {
-                object obj = ResourceManager.GetObject("worker2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap worker21 {
-            get {
-                object obj = ResourceManager.GetObject("worker21", resourceCulture);
+                object obj = ResourceManager.GetObject("VisualEditor___Icon___Close___white_svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

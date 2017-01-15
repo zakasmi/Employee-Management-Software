@@ -1,0 +1,16 @@
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\bin\Debug\GestEmp.exe.config
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\bin\Debug\GestEmp.exe
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\bin\Debug\GestEmp.pdb
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\bin\Debug\MetroFramework.Design.dll
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\bin\Debug\MetroFramework.dll
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.EmployeInfo.resources
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.Form1.resources
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.Form2.resources
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.Properties.Resources.resources
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.UCAccueil.resources
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.UCDepartement.resources
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.csproj.GenerateResource.Cache
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.exe
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.pdb
+C:\Users\dell\Documents\Visual Studio 2015\Projects\GestEmp\GestEmp\obj\Debug\GestEmp.csprojResolveAssemblyReference.cache

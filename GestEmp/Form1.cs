@@ -15,7 +15,7 @@ namespace GestEmp
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-       
+
 
         public Form1()
         {
@@ -60,13 +60,13 @@ namespace GestEmp
             panel2.Controls.Add(UCDepartement.instanceUCDepartement);
             UCDepartement.instanceUCDepartement.Dock = DockStyle.Fill;
             // make metrotab fill the panel2
-              metroTabControl1.Dock = DockStyle.Fill;
-           // MessageBox.Show("hello world");
+            metroTabControl1.Dock = DockStyle.Fill;
+            // MessageBox.Show("hello world");
             fill_cb();
 
 
         }
-        
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -210,7 +210,7 @@ namespace GestEmp
 
         private void button4_MouseUp(object sender, MouseEventArgs e)
         {
-          button4.Size = new Size(124, 35);
+            button4.Size = new Size(124, 35);
         }
 
         private void metroLabel13_Click(object sender, EventArgs e)
@@ -237,11 +237,11 @@ namespace GestEmp
             //ctrl.Text = "";
         }
 
-        
+
 
         private void button7_MouseHover(object sender, EventArgs e)
         {
-          //  button7.Size = new Size(30, 28);
+            //  button7.Size = new Size(30, 28);
         }
 
         private void button7_MouseLeave(object sender, EventArgs e)
@@ -287,87 +287,126 @@ namespace GestEmp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-           
+
             Form2 f = new Form2();
-            f.ShowDialog(this);
-            
+            if (!string.IsNullOrWhiteSpace(LBL_Mod_Sup_IdEmp.Text))
+            {
+                Fill_Form2_OriginalValues(f);
+                f.ShowDialog(this);
+            }
+            else MessageBox.Show("s'il vous plaît choisir un Employé");
+
+
+        }
+        public void Fill_Form2_OriginalValues(Form2 f)
+        {
+               Provider.datarow = Provider.ds.Tables["Employee"].Select("ID_EMP=" + LBL_Mod_Sup_IdEmp.Text);
+               f.LBL_Modifier_IdEmp2.Text = Provider.datarow[0][0].ToString();
+               f.TXB_Modifier_Nom.Text = Provider.datarow[0][1].ToString();
+               f.TXB_Modifier_Prenom.Text = Provider.datarow[0][2].ToString();
+               f.TXB_Modifier_Tel.Text = Provider.datarow[0][3].ToString();
+               f.TXB_Modifier_Email.Text = Provider.datarow[0][4].ToString();
+               f.DTP_Modifier_DateN.Value = DateTime.Parse(Provider.datarow[0][5].ToString());
+               f.DTP_Modifier_DateE.Value = DateTime.Parse(Provider.datarow[0][6].ToString());
+               if (Provider.datarow[0][7].ToString() == "F") f.RB_Modifier_F.Checked = true;
+               else f.RB_Modifier_M.Checked = true;
+               f.TXB_Modifier_Salaire.Text = Provider.datarow[0][8].ToString();
+               f.TXB_Modifier_Adresse.Text = Provider.datarow[0][9].ToString();
+
+               f.Paysid = int.Parse(Provider.datarow[0][10].ToString());
+               f.Regionid = int.Parse(Provider.datarow[0][11].ToString());
+               f.Villeid = int.Parse(Provider.datarow[0][12].ToString());
+               f.Departementid = int.Parse(Provider.datarow[0][13].ToString());
+               f.Posteid = int.Parse(Provider.datarow[0][14].ToString());
+               
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+             if (LBL_Mod_Sup_IdEmp.Text!=null && LBL_Mod_Sup_IdEmp.Text !="" ) {
+                  EmployeInfo emp = new EmployeInfo();
+                  DataRow[] row = Provider.ds.Tables["Employee"].Select("ID_EMP=" + LBL_Mod_Sup_IdEmp.Text);
 
-            EmployeInfo emp = new EmployeInfo();
-            DataRow[] row = Provider.ds.Tables["Employee"].Select("ID_EMP="+ LBL_Mod_Sup_IdEmp.Text);
-            emp.Info_NomPrenom.Text = row[0][1].ToString() +"  "+ row[0][2].ToString();
-            emp.Info_IdEmp.Text = row[0][0].ToString();
-            //emp.Info_PosteNom.Text = 
-
-            
-            emp.Info_Sexe.Text = row[0][7].ToString() ;
-            emp.Info_Nom.Text = row[0][1].ToString();
-            emp.Info_Prenom.Text = row[0][2].ToString();
-            emp.Info_Tel.Text = row[0][3].ToString();
-            emp.Info_Email.Text = row[0][4].ToString();
-            emp.Info_DateN.Text = row[0][5].ToString();
-            emp.Info_DateE.Text =row[0][6].ToString();
-            emp.Info_Salaire.Text = row[0][8].ToString();
-            emp.Info_Adresse.Text = row[0][9].ToString();
-            // selet the name of Pays from Pays Table  using its ID in the Employee table 
-            var dt = Provider.ds.Tables["Pays"].AsEnumerable();
-            emp.Info_Pays.Text =( from r in dt
-                    where r.Field<int>("ID_PAYS")== int.Parse(row[0][10].ToString())
-                                 select r.Field<string>("Nom_pays")).First<string>();
-
-            dt= Provider.ds.Tables["Region"].AsEnumerable();
-            emp.Info_Region.Text = (from r in dt
-                                  where r.Field<int>("ID_Region") == int.Parse(row[0][11].ToString())
-                                  select r.Field<string>("Nom_region")).First<string>();
-            dt=Provider.ds.Tables["Ville"].AsEnumerable();
-            emp.Info_Ville.Text = (from r in dt
-                                    where r.Field<int>("ID_VILLE") == int.Parse(row[0][12].ToString())
-                                    select r.Field<string>("Nom_ville")).First<string>();
-            dt=Provider.ds.Tables["Departement"].AsEnumerable();
-            emp.Info_Departement.Text = (from r in dt
-                                   where r.Field<int>("ID_DEPT") == int.Parse(row[0][13].ToString())
-                                   select r.Field<string>("Dept_Nom")).First<string>();
-
-            dt = Provider.ds.Tables["Poste"].AsEnumerable();
-
-            emp.Info_Poste.Text = (from r in dt
-                                   where r.Field<int>("ID_POSTE") == int.Parse(row[0][14].ToString())
-                                   select r.Field<string>("Post_nom")).First<string>();
-
-            emp.Info_PosteNom.Text = emp.Info_Poste.Text;
-            emp.ShowDialog();
+                  emp.Info_NomPrenom.Text = row[0][1].ToString() + "  " + row[0][2].ToString();
+                  emp.Info_IdEmp.Text = row[0][0].ToString();
+                  //emp.Info_PosteNom.Text = 
 
 
+                  emp.Info_Sexe.Text = row[0][7].ToString();
+                  emp.Info_Nom.Text = row[0][1].ToString();
+                  emp.Info_Prenom.Text = row[0][2].ToString();
+                  emp.Info_Tel.Text = row[0][3].ToString();
+                  emp.Info_Email.Text = row[0][4].ToString();
+                  emp.Info_DateN.Text = row[0][5].ToString();
+                  emp.Info_DateE.Text = row[0][6].ToString();
+                  emp.Info_Salaire.Text = row[0][8].ToString();
+                  emp.Info_Adresse.Text = row[0][9].ToString();
+                  // selet the name of Pays from Pays Table  using its ID in the Employee table 
+                  var dt = Provider.ds.Tables["Pays"].AsEnumerable();
+                  emp.Info_Pays.Text = (from r in dt
+                                        where r.Field<int>("ID_PAYS") == int.Parse(row[0][10].ToString())
+                                        select r.Field<string>("Nom_pays")).First<string>();
+
+                  dt = Provider.ds.Tables["Region"].AsEnumerable();
+                  emp.Info_Region.Text = (from r in dt
+                                          where r.Field<int>("ID_Region") == int.Parse(row[0][11].ToString())
+                                          select r.Field<string>("Nom_region")).First<string>();
+                  dt = Provider.ds.Tables["Ville"].AsEnumerable();
+                  emp.Info_Ville.Text = (from r in dt
+                                         where r.Field<int>("ID_VILLE") == int.Parse(row[0][12].ToString())
+                                         select r.Field<string>("Nom_ville")).First<string>();
+                  dt = Provider.ds.Tables["Departement"].AsEnumerable();
+                  emp.Info_Departement.Text = (from r in dt
+                                               where r.Field<int>("ID_DEPT") == int.Parse(row[0][13].ToString())
+                                               select r.Field<string>("Dept_Nom")).First<string>();
+
+                  dt = Provider.ds.Tables["Poste"].AsEnumerable();
+
+                  emp.Info_Poste.Text = (from r in dt
+                                         where r.Field<int>("ID_POSTE") == int.Parse(row[0][14].ToString())
+                                         select r.Field<string>("Post_nom")).First<string>();
+
+                  emp.Info_PosteNom.Text = emp.Info_Poste.Text;
+                  emp.ShowDialog();
+              } else MessageBox.Show("please select an employee");
+
+              
 
 
-            //.Show();
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
 
         }
-
+        bool search = true;
         private void button6_Click(object sender, EventArgs e)
         {
+            search = false;
             metroGrid1.DataSource = null;
             metroGrid1.Refresh();
-            Provider.dt2 = Provider.ds.Tables["Employee"].DefaultView.ToTable(true,"ID_EMP","Nom","Prenom","Tel","id_ville","sexe","adress");
+            metroGrid1.DataSource = Provider.ds.Tables["Employee"].DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
             //Change the column name 
-            Provider.dt2.Columns["id_ville"].ColumnName = "Ville";
-            Provider.dt2.Columns["ID_EMP"].ColumnName = "ID Employé";
-            metroGrid1.DataSource = Provider.dt2;
-
+            /* Provider.dt2.Columns["id_ville"].ColumnName = "Ville";
+             Provider.dt2.Columns["ID_EMP"].ColumnName = "ID Employé";
+             metroGrid1.DataSource = Provider.dt2;
+             */
             // make all columns readonly just one columns can be edited
             metroGrid1.ReadOnly = false;
-            for(int i=1;i<metroGrid1.Columns.Count;i++)
-            metroGrid1.Columns[i].ReadOnly = true;
-
+            for (int i = 1; i < metroGrid1.Columns.Count; i++)
+            {
+                metroGrid1.Columns[i].ReadOnly = true;
+            }
             metroGrid1.Columns[0].ReadOnly = false;
-            
+
+            // the default value of a datagridViewcheckbox is null . you must intiliase 
+            // the cell with false . 
+            // or you can use if(rows.cells[0].value!null && (bool)rows.cells[0])
+            foreach (DataGridViewRow row in metroGrid1.Rows)
+            {
+                row.Cells[0].Value = false;
+            }
+
             //metroGrid1.DataSource = Provider.ds.Tables["Employee"];
 
         }
@@ -456,24 +495,26 @@ namespace GestEmp
                     Provider.da.Update(Provider.ds, "Employee");
                     // clear the table Employee => table.clear() will delete all the rows and format
                     // table.rows.clear() will delete just rows and keep the format 
-                   
 
-/*
-                    // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
-                    string a = "";
-                    foreach (DataRow row2 in Provider.ds.Tables["Employee"].Rows)
-                    {
 
-                        a += row2[0].ToString() + "  /n";
+                    /*
+                                        // this Code displays all the ID_EMP that are currently in  Provider.ds.Tables["Employee"]
+                                        string a = "";
+                                        foreach (DataRow row2 in Provider.ds.Tables["Employee"].Rows)
+                                        {
 
-                        MessageBox.Show(" " + a);
-                    }*/
+                                            a += row2[0].ToString() + "  /n";
+
+                                            MessageBox.Show(" " + a);
+                                        }*/
                 }
             }
-            catch (Exception e1) {
+            catch (Exception e1)
+            {
                 MessageBox.Show(e1.Message.ToString());
             }
-            finally {
+            finally
+            {
                 Provider.ds.Tables["Employee"].Rows.Clear();
                 Provider.da.Fill(Provider.ds, "Employee");
 
@@ -517,7 +558,7 @@ namespace GestEmp
             Provider.da = new SqlDataAdapter("select * from Region order by ID_Region ", Provider.cnx);    //R join pays P on R.Id_pays = P.Id_pays where Nom_pay = '"+CB_Ajouter_Pays.SelectedText+"'"
             Provider.da.Fill(Provider.ds, "Region");
 
-        
+
 
             //  3) Fill the ville  table in the dataset 
             Provider.da = new SqlDataAdapter("Select * from Ville order by ID_VILLE", Provider.cnx);
@@ -540,14 +581,14 @@ namespace GestEmp
 
             //7) fill Poste
             Provider.da = new SqlDataAdapter("Select *from Poste order by ID_POSTE", Provider.cnx);
-            Provider.da.Fill(Provider.ds,"Poste");
+            Provider.da.Fill(Provider.ds, "Poste");
 
 
             //6 ) Fill Employee table in the dataset 
-            Provider.da = new SqlDataAdapter("select * from Employee order by ID_EMP", Provider.cnx);
+            Provider.da = new SqlDataAdapter("select * from Employee ", Provider.cnx);
             Provider.da.Fill(Provider.ds, "Employee");
 
-            
+
 
 
 
@@ -573,14 +614,14 @@ namespace GestEmp
             CB_Ajouter_Ville.SelectedIndex = -1;
         }
 
-      
+
         private void CB_Ajouter_Departement_SelectedValueChanged(object sender, EventArgs e)
         {
 
             if (CB_Ajouter_Departement.SelectedIndex != -1)
             {  // MessageBox.Show("iam here");
                 Fill_CB_Ajouter_Poste(CB_Ajouter_Departement.SelectedValue.ToString());
-               
+
             }
             CB_Ajouter_Poste.SelectedIndex = -1;
         }
@@ -623,7 +664,8 @@ namespace GestEmp
             CB_Ajouter_Ville.DisplayMember = "Nom_ville";
 
         }
-        private void Fill_CB_Ajouter_Poste(string id_dept) {
+        private void Fill_CB_Ajouter_Poste(string id_dept)
+        {
 
             CB_Ajouter_Poste.DataSource = null;
             //MessageBox.Show(""+id_dept);
@@ -632,12 +674,12 @@ namespace GestEmp
             foreach (DataRow Drow in datarow)
                 datatable.ImportRow(Drow);
 
-           
+
             CB_Ajouter_Poste.DataSource = datatable;
             CB_Ajouter_Poste.ValueMember = "ID_POSTE";
             CB_Ajouter_Poste.DisplayMember = "Post_nom";
-            
-            
+
+
 
 
         }
@@ -659,7 +701,7 @@ namespace GestEmp
                 if (ctrl is MetroFramework.Controls.MetroComboBox)
                 {
                     var ctr2 = ctrl as MetroFramework.Controls.MetroComboBox;
-                    if (ctr2.SelectedIndex==-1)
+                    if (ctr2.SelectedIndex == -1)
                     {
                         MessageBox.Show("Veuillez selectionner les combobox", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                         bol = false;
@@ -669,12 +711,13 @@ namespace GestEmp
                 if (ctrl is MetroFramework.Controls.MetroRadioButton)
                 {
                     var ctr2 = ctrl as MetroFramework.Controls.MetroRadioButton;
-                   
-                        if (!ctr2.Checked)
+
+                    if (!ctr2.Checked)
                     {
-                        i++; 
+                        i++;
                     }
-                    if (i >= 2) {
+                    if (i >= 2)
+                    {
                         MessageBox.Show("Veuillez cocher une radiobutton", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                         bol = false;
                         break;
@@ -689,7 +732,8 @@ namespace GestEmp
         {
 
         }
-        public void Clear_metroTabPage1() {
+        public void Clear_metroTabPage1()
+        {
 
             foreach (Control ctrl in metroTabPage1.Controls)
             {
@@ -710,7 +754,7 @@ namespace GestEmp
                     var ctr2 = ctrl as MetroFramework.Controls.MetroDateTime;
                     ctr2.Value = DateTime.Now;
                 }
-                if(ctrl is PictureBox)
+                if (ctrl is PictureBox)
                 {
                     ctrl.BackgroundImage = new Bitmap(GestEmp.Properties.Resources.user4);
                 }
@@ -724,14 +768,17 @@ namespace GestEmp
         private void metroGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
-            if (i < metroGrid1.Rows.Count && i>=0)
+            if (i < metroGrid1.Rows.Count && i >= 0)
             {
                 string ID = metroGrid1.Rows[i].Cells[1].Value.ToString();
-                DataRow[] Drow = Provider.ds.Tables["Employee"].Select("ID_EMP="+ID);
+                DataRow[] Drow = Provider.ds.Tables["Employee"].Select("ID_EMP=" + ID);
                 LBL_Mod_Sup_IdEmp.Text = Drow[0][0].ToString();
                 LBL_Mod_Sup_Tel.Text = Drow[0][3].ToString();
-                LBL_Mod_Sup_Depart.Text = Drow[0][13].ToString();
+                // LBL_Mod_Sup_Depart.Text = Drow[0][13].ToString();
                 LBL_Mod_Sup_Email.Text = Drow[0][4].ToString();
+                LBL_Mod_Sup_Depart.Text = (from r in Provider.ds.Tables["Departement"].AsEnumerable()
+                                           where r.Field<int>("ID_DEPT") == int.Parse(Drow[0][13].ToString())
+                                           select r.Field<string>("Dept_Nom")).First<string>();
             }
 
         }
@@ -740,36 +787,46 @@ namespace GestEmp
         {
             if (CB_Mod_Sup_Chercher.SelectedItem.ToString() == "Numero Telephone") { TypeRecherche = "Tel"; }
             else if (CB_Mod_Sup_Chercher.SelectedItem.ToString() == "Nom") { TypeRecherche = "Nom"; }
-            else  if(CB_Mod_Sup_Chercher.SelectedItem.ToString() == "Prénom") { TypeRecherche = "Prenom"; }
+            else if (CB_Mod_Sup_Chercher.SelectedItem.ToString() == "Prénom") { TypeRecherche = "Prenom"; }
 
         }
 
         private void metroTextBox21_TextChanged(object sender, EventArgs e)
         {
+            search = true;
             string s = "";
             DataRow[] datarow;
-            DataTable dt = Provider.ds.Tables["Employee"].Clone();
-            if (TypeRecherche == "Tel") {
-                 s = "Tel ='" + TXB_Mod_Sup_Chercher.Text.ToString()+"' ";
-              //  MessageBox.Show(""+Provider.dt2.Rows.Count);
-            }
-            if(TypeRecherche == "Nom") {
-                 s = "Nom ='" + TXB_Mod_Sup_Chercher.Text.ToString() + "' ";
+            Provider.dt1 = Provider.ds.Tables["Employee"].Clone();
+            if (TypeRecherche == "Tel")
+            {
+                s = "Tel like'" + TXB_Mod_Sup_Chercher.Text.ToString() + "%"+ "' ";
                 //  MessageBox.Show(""+Provider.dt2.Rows.Count);
             }
-            if (TypeRecherche == "Prenom") {
-                s = "Prenom ='" + TXB_Mod_Sup_Chercher.Text.ToString() + "' ";
+            if (TypeRecherche == "Nom")
+            {
+                s = "Nom ='" + TXB_Mod_Sup_Chercher.Text.ToString() + "' ";
+                //  MessageBox.Show(""+Provider.dt2.Rows.Count);
+            }
+            if (TypeRecherche == "Prenom")
+            {
+                s = "Prenom = '" + TXB_Mod_Sup_Chercher.Text.ToString()+ "' ";
                 //  MessageBox.Show(""+Provider.dt2.Rows.Count);
             }
 
             datarow = Provider.ds.Tables["Employee"].Select(s);
             foreach (DataRow Drow in datarow)
-                dt.ImportRow(Drow);
-            Provider.dt2 = dt.DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
+                Provider.dt1.ImportRow(Drow);
+            Provider.dt2 = Provider.dt1.DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
             Provider.dt2.Columns["ID_EMP"].ColumnName = "Id Employé";
             Provider.dt2.Columns["id_ville"].ColumnName = "Ville";
             metroGrid1.DataSource = Provider.dt2;
-            
+
+            foreach (DataGridViewRow row in metroGrid1.Rows)
+            {
+                row.Cells[0].Value = false;
+            }
+
+
         }
 
         private void CB_Ajouter_Poste_SelectedIndexChanged(object sender, EventArgs e)
@@ -777,13 +834,90 @@ namespace GestEmp
 
         }
 
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       
+
+
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach(DataRow Row in metroGrid1.Rows)
+            // --------------------------------------------------------------------
+            Provider.da = new SqlDataAdapter("select * from Employee ", Provider.cnx);
+            string s = "(";
+            bool nothing = true;
+            Provider.ds.Tables["Employee"].PrimaryKey = new DataColumn[] { Provider.ds.Tables["Employee"].Columns["ID_EMP"] };
+
+            for (int i = metroGrid1.Rows.Count - 1; i >= 0; i--)
             {
-                // 
+                if ((bool)metroGrid1.Rows[i].Cells[0].Value)
+                {
+                    s += metroGrid1.Rows[i].Cells[1].Value.ToString() + ",";
+                    metroGrid1.Rows.RemoveAt(i);
+                    nothing = false;
+                }
+            }
+
+            if (nothing)
+            {
+                MessageBox.Show("Aucun ligne !! selectionner un employée");
+                return;
+            }
+            if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer", "Supprimer", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                s += ")";
+                MessageBox.Show(s);
+                char[] chararray = s.ToCharArray();
+                chararray[s.Length - 2] = ' ';
+                s = new string(chararray);
+                MessageBox.Show(s);
+
+                DataRow[] data = Provider.ds.Tables["Employee"].Select("ID_EMP in " + s);
+                foreach (DataRow row in data)
+                {
+                    //  MessageBox.Show(row[0].ToString()); 
+                    Provider.ds.Tables["Employee"].Rows.Find(row[0].ToString()).Delete();
+                }
+
+                metroGrid1.DataSource = null;
+
+                SqlCommandBuilder cmb = new SqlCommandBuilder(Provider.da);
+                /*if  if you specify the dataAdaptor when creating the SqlCommandBuilder you DON'T
+                // need to set the commands, the SqlCommandBuilder registers itself as a listener.
+                Provider.da.UpdateCommand = Provider.Cmb.GetUpdateCommand(true);
+                Provider.da.InsertCommand = Provider.Cmb.GetInsertCommand(true);
+                Provider.da.DeleteCommand = Provider.Cmb.GetDeleteCommand(true);
+                 */
+                Provider.da.Update(Provider.ds, "Employee");
+                Provider.da.Fill(Provider.ds, "Employee");
+                LBL_Mod_Sup_IdEmp.Text = "";
+                LBL_Mod_Sup_Depart.Text = "";
+                LBL_Mod_Sup_Email.Text = "";
+                LBL_Mod_Sup_Tel.Text = "";
+
 
             }
+
+
+
+            if (search) { metroTextBox21_TextChanged(sender, e); }
+            else button6_Click(sender, e);
+
+
+        
+    }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Form1_Load(sender, e);
         }
     }
 }

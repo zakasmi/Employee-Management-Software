@@ -264,7 +264,7 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox2.Image = global::GestEmp.Properties.Resources.search_icon51;
+        //    this.pictureBox2.Image = global::GestEmp.Properties.Resources.search_icon51;
             this.pictureBox2.InitialImage = global::GestEmp.Properties.Resources.search_icon5;
             this.pictureBox2.Location = new System.Drawing.Point(313, 62);
             this.pictureBox2.Name = "pictureBox2";

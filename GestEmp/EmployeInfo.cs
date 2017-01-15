@@ -33,8 +33,6 @@ namespace GestEmp
 
             using (EmployeInfo Emp = new EmployeInfo()) {
 
-              // Emp.Info_Nom.Text = Provider.d
-
                 return Emp.ShowDialog(); }
 
                 

@@ -30,14 +30,11 @@
         {
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel35 = new MetroFramework.Controls.MetroLabel();
-            this.Info_NomPrenom = new MetroFramework.Controls.MetroLabel();
-            this.Info_PosteNom = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel31 = new MetroFramework.Controls.MetroLabel();
-            this.Info_IdEmp = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.Info_NomPrenom = new MetroFramework.Controls.MetroLabel();
+            this.Info_PosteNom = new MetroFramework.Controls.MetroLabel();
+            this.Info_IdEmp = new MetroFramework.Controls.MetroLabel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -48,15 +45,8 @@
             this.metroTextBox11 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox9 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox10 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel31 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
@@ -65,17 +55,27 @@
             this.Info_Sexe = new MetroFramework.Controls.MetroLabel();
             this.Info_Nom = new MetroFramework.Controls.MetroLabel();
             this.Info_Prenom = new MetroFramework.Controls.MetroLabel();
-            this.Info_Tel = new MetroFramework.Controls.MetroLabel();
-            this.Info_Email = new MetroFramework.Controls.MetroLabel();
-            this.Info_DateN = new MetroFramework.Controls.MetroLabel();
-            this.Info_DateE = new MetroFramework.Controls.MetroLabel();
-            this.Info_Salaire = new MetroFramework.Controls.MetroLabel();
-            this.Info_Adresse = new MetroFramework.Controls.MetroLabel();
-            this.Info_Pays = new MetroFramework.Controls.MetroLabel();
-            this.Info_Region = new MetroFramework.Controls.MetroLabel();
-            this.Info_Ville = new MetroFramework.Controls.MetroLabel();
-            this.Info_Departement = new MetroFramework.Controls.MetroLabel();
             this.Info_Poste = new MetroFramework.Controls.MetroLabel();
+            this.Info_Departement = new MetroFramework.Controls.MetroLabel();
+            this.Info_Ville = new MetroFramework.Controls.MetroLabel();
+            this.Info_Region = new MetroFramework.Controls.MetroLabel();
+            this.Info_Pays = new MetroFramework.Controls.MetroLabel();
+            this.Info_Adresse = new MetroFramework.Controls.MetroLabel();
+            this.Info_Salaire = new MetroFramework.Controls.MetroLabel();
+            this.Info_DateE = new MetroFramework.Controls.MetroLabel();
+            this.Info_DateN = new MetroFramework.Controls.MetroLabel();
+            this.Info_Email = new MetroFramework.Controls.MetroLabel();
+            this.Info_Tel = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel35 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.metroPanel2.SuspendLayout();
@@ -111,90 +111,6 @@
             this.metroLabel5.UseCustomBackColor = true;
             this.metroLabel5.UseCustomForeColor = true;
             // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.ForeColor = System.Drawing.Color.White;
-            this.metroLabel10.Location = new System.Drawing.Point(21, 363);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel10.TabIndex = 185;
-            this.metroLabel10.Text = "Prenom";
-            this.metroLabel10.UseCustomBackColor = true;
-            this.metroLabel10.UseCustomForeColor = true;
-            // 
-            // metroLabel35
-            // 
-            this.metroLabel35.AutoSize = true;
-            this.metroLabel35.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel35.ForeColor = System.Drawing.Color.White;
-            this.metroLabel35.Location = new System.Drawing.Point(21, 310);
-            this.metroLabel35.Name = "metroLabel35";
-            this.metroLabel35.Size = new System.Drawing.Size(39, 19);
-            this.metroLabel35.TabIndex = 183;
-            this.metroLabel35.Text = "Nom";
-            this.metroLabel35.UseCustomBackColor = true;
-            this.metroLabel35.UseCustomForeColor = true;
-            // 
-            // Info_NomPrenom
-            // 
-            this.Info_NomPrenom.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Info_NomPrenom.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.Info_NomPrenom.ForeColor = System.Drawing.Color.White;
-            this.Info_NomPrenom.Location = new System.Drawing.Point(182, 24);
-            this.Info_NomPrenom.Name = "Info_NomPrenom";
-            this.Info_NomPrenom.Size = new System.Drawing.Size(139, 36);
-            this.Info_NomPrenom.TabIndex = 0;
-            this.Info_NomPrenom.Text = "Zakaria Kasmi";
-            this.Info_NomPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Info_NomPrenom.UseCustomBackColor = true;
-            this.Info_NomPrenom.UseCustomForeColor = true;
-            this.Info_NomPrenom.Click += new System.EventHandler(this.Info_NomPrenom_Click);
-            // 
-            // Info_PosteNom
-            // 
-            this.Info_PosteNom.AutoSize = true;
-            this.Info_PosteNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(213)))));
-            this.Info_PosteNom.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.Info_PosteNom.ForeColor = System.Drawing.Color.White;
-            this.Info_PosteNom.Location = new System.Drawing.Point(182, 75);
-            this.Info_PosteNom.Name = "Info_PosteNom";
-            this.Info_PosteNom.Size = new System.Drawing.Size(114, 19);
-            this.Info_PosteNom.TabIndex = 1;
-            this.Info_PosteNom.Text = "Web Developer";
-            this.Info_PosteNom.UseCustomBackColor = true;
-            this.Info_PosteNom.UseCustomForeColor = true;
-            this.Info_PosteNom.Click += new System.EventHandler(this.Info_PosteNom_Click);
-            // 
-            // metroLabel31
-            // 
-            this.metroLabel31.AutoSize = true;
-            this.metroLabel31.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel31.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel31.ForeColor = System.Drawing.Color.White;
-            this.metroLabel31.Location = new System.Drawing.Point(67, 8);
-            this.metroLabel31.Name = "metroLabel31";
-            this.metroLabel31.Size = new System.Drawing.Size(122, 25);
-            this.metroLabel31.TabIndex = 5;
-            this.metroLabel31.Text = "Informations";
-            this.metroLabel31.UseCustomBackColor = true;
-            this.metroLabel31.UseCustomForeColor = true;
-            // 
-            // Info_IdEmp
-            // 
-            this.Info_IdEmp.AutoSize = true;
-            this.Info_IdEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(213)))));
-            this.Info_IdEmp.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_IdEmp.ForeColor = System.Drawing.Color.White;
-            this.Info_IdEmp.Location = new System.Drawing.Point(182, 99);
-            this.Info_IdEmp.Name = "Info_IdEmp";
-            this.Info_IdEmp.Size = new System.Drawing.Size(69, 19);
-            this.Info_IdEmp.TabIndex = 2;
-            this.Info_IdEmp.Text = "EMP0015";
-            this.Info_IdEmp.UseCustomBackColor = true;
-            this.Info_IdEmp.UseCustomForeColor = true;
-            // 
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(5)))), ((int)(((byte)(58)))));
@@ -227,6 +143,50 @@
             this.pictureBox4.Size = new System.Drawing.Size(109, 109);
             this.pictureBox4.TabIndex = 104;
             this.pictureBox4.TabStop = false;
+            // 
+            // Info_NomPrenom
+            // 
+            this.Info_NomPrenom.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Info_NomPrenom.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.Info_NomPrenom.ForeColor = System.Drawing.Color.White;
+            this.Info_NomPrenom.Location = new System.Drawing.Point(182, 24);
+            this.Info_NomPrenom.Name = "Info_NomPrenom";
+            this.Info_NomPrenom.Size = new System.Drawing.Size(139, 36);
+            this.Info_NomPrenom.TabIndex = 0;
+            this.Info_NomPrenom.Text = "Zakaria Kasmi";
+            this.Info_NomPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Info_NomPrenom.UseCustomBackColor = true;
+            this.Info_NomPrenom.UseCustomForeColor = true;
+            this.Info_NomPrenom.Click += new System.EventHandler(this.Info_NomPrenom_Click);
+            // 
+            // Info_PosteNom
+            // 
+            this.Info_PosteNom.AutoSize = true;
+            this.Info_PosteNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(213)))));
+            this.Info_PosteNom.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.Info_PosteNom.ForeColor = System.Drawing.Color.White;
+            this.Info_PosteNom.Location = new System.Drawing.Point(182, 75);
+            this.Info_PosteNom.Name = "Info_PosteNom";
+            this.Info_PosteNom.Size = new System.Drawing.Size(114, 19);
+            this.Info_PosteNom.TabIndex = 1;
+            this.Info_PosteNom.Text = "Web Developer";
+            this.Info_PosteNom.UseCustomBackColor = true;
+            this.Info_PosteNom.UseCustomForeColor = true;
+            this.Info_PosteNom.Click += new System.EventHandler(this.Info_PosteNom_Click);
+            // 
+            // Info_IdEmp
+            // 
+            this.Info_IdEmp.AutoSize = true;
+            this.Info_IdEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(213)))));
+            this.Info_IdEmp.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_IdEmp.ForeColor = System.Drawing.Color.White;
+            this.Info_IdEmp.Location = new System.Drawing.Point(182, 99);
+            this.Info_IdEmp.Name = "Info_IdEmp";
+            this.Info_IdEmp.Size = new System.Drawing.Size(69, 19);
+            this.Info_IdEmp.TabIndex = 2;
+            this.Info_IdEmp.Text = "EMP0015";
+            this.Info_IdEmp.UseCustomBackColor = true;
+            this.Info_IdEmp.UseCustomForeColor = true;
             // 
             // metroPanel6
             // 
@@ -467,43 +427,19 @@
             this.metroTextBox10.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox10.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroLabel1
+            // metroLabel31
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.ForeColor = System.Drawing.Color.White;
-            this.metroLabel1.Location = new System.Drawing.Point(21, 469);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel1.TabIndex = 176;
-            this.metroLabel1.Text = "E-Mail";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.ForeColor = System.Drawing.Color.White;
-            this.metroLabel7.Location = new System.Drawing.Point(27, 577);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel7.TabIndex = 171;
-            this.metroLabel7.UseCustomBackColor = true;
-            this.metroLabel7.UseCustomForeColor = true;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.ForeColor = System.Drawing.Color.White;
-            this.metroLabel8.Location = new System.Drawing.Point(21, 577);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(105, 19);
-            this.metroLabel8.TabIndex = 170;
-            this.metroLabel8.Text = "Date Embauche";
-            this.metroLabel8.UseCustomBackColor = true;
-            this.metroLabel8.UseCustomForeColor = true;
+            this.metroLabel31.AutoSize = true;
+            this.metroLabel31.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel31.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel31.ForeColor = System.Drawing.Color.White;
+            this.metroLabel31.Location = new System.Drawing.Point(67, 8);
+            this.metroLabel31.Name = "metroLabel31";
+            this.metroLabel31.Size = new System.Drawing.Size(122, 25);
+            this.metroLabel31.TabIndex = 5;
+            this.metroLabel31.Text = "Informations";
+            this.metroLabel31.UseCustomBackColor = true;
+            this.metroLabel31.UseCustomForeColor = true;
             // 
             // metroPanel3
             // 
@@ -520,70 +456,6 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.ForeColor = System.Drawing.Color.White;
-            this.metroLabel3.Location = new System.Drawing.Point(370, 416);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(51, 19);
-            this.metroLabel3.TabIndex = 195;
-            this.metroLabel3.Text = "Region";
-            this.metroLabel3.UseCustomBackColor = true;
-            this.metroLabel3.UseCustomForeColor = true;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.ForeColor = System.Drawing.Color.White;
-            this.metroLabel2.Location = new System.Drawing.Point(370, 363);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(37, 19);
-            this.metroLabel2.TabIndex = 194;
-            this.metroLabel2.Text = "Pays";
-            this.metroLabel2.UseCustomBackColor = true;
-            this.metroLabel2.UseCustomForeColor = true;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(370, 522);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(90, 19);
-            this.metroLabel4.TabIndex = 193;
-            this.metroLabel4.Text = "Departement";
-            this.metroLabel4.UseCustomBackColor = true;
-            this.metroLabel4.UseCustomForeColor = true;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.ForeColor = System.Drawing.Color.White;
-            this.metroLabel6.Location = new System.Drawing.Point(370, 469);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel6.TabIndex = 192;
-            this.metroLabel6.Text = "Ville";
-            this.metroLabel6.UseCustomBackColor = true;
-            this.metroLabel6.UseCustomForeColor = true;
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel12.ForeColor = System.Drawing.Color.White;
-            this.metroLabel12.Location = new System.Drawing.Point(370, 257);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel12.TabIndex = 190;
-            this.metroLabel12.Text = "Salaire";
-            this.metroLabel12.UseCustomBackColor = true;
-            this.metroLabel12.UseCustomForeColor = true;
             // 
             // metroLabel9
             // 
@@ -688,113 +560,17 @@
             this.Info_Prenom.UseCustomBackColor = true;
             this.Info_Prenom.UseCustomForeColor = true;
             // 
-            // Info_Tel
+            // Info_Poste
             // 
-            this.Info_Tel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Tel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Tel.ForeColor = System.Drawing.Color.White;
-            this.Info_Tel.Location = new System.Drawing.Point(135, 414);
-            this.Info_Tel.Name = "Info_Tel";
-            this.Info_Tel.Size = new System.Drawing.Size(183, 23);
-            this.Info_Tel.TabIndex = 183;
-            this.Info_Tel.UseCustomBackColor = true;
-            this.Info_Tel.UseCustomForeColor = true;
-            // 
-            // Info_Email
-            // 
-            this.Info_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Email.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Email.ForeColor = System.Drawing.Color.White;
-            this.Info_Email.Location = new System.Drawing.Point(135, 467);
-            this.Info_Email.Name = "Info_Email";
-            this.Info_Email.Size = new System.Drawing.Size(183, 23);
-            this.Info_Email.TabIndex = 183;
-            this.Info_Email.UseCustomBackColor = true;
-            this.Info_Email.UseCustomForeColor = true;
-            // 
-            // Info_DateN
-            // 
-            this.Info_DateN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_DateN.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_DateN.ForeColor = System.Drawing.Color.White;
-            this.Info_DateN.Location = new System.Drawing.Point(135, 522);
-            this.Info_DateN.Name = "Info_DateN";
-            this.Info_DateN.Size = new System.Drawing.Size(183, 23);
-            this.Info_DateN.TabIndex = 183;
-            this.Info_DateN.UseCustomBackColor = true;
-            this.Info_DateN.UseCustomForeColor = true;
-            // 
-            // Info_DateE
-            // 
-            this.Info_DateE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_DateE.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_DateE.ForeColor = System.Drawing.Color.White;
-            this.Info_DateE.Location = new System.Drawing.Point(135, 575);
-            this.Info_DateE.Name = "Info_DateE";
-            this.Info_DateE.Size = new System.Drawing.Size(183, 23);
-            this.Info_DateE.TabIndex = 183;
-            this.Info_DateE.UseCustomBackColor = true;
-            this.Info_DateE.UseCustomForeColor = true;
-            // 
-            // Info_Salaire
-            // 
-            this.Info_Salaire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Salaire.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Salaire.ForeColor = System.Drawing.Color.White;
-            this.Info_Salaire.Location = new System.Drawing.Point(482, 255);
-            this.Info_Salaire.Name = "Info_Salaire";
-            this.Info_Salaire.Size = new System.Drawing.Size(183, 23);
-            this.Info_Salaire.TabIndex = 183;
-            this.Info_Salaire.UseCustomBackColor = true;
-            this.Info_Salaire.UseCustomForeColor = true;
-            // 
-            // Info_Adresse
-            // 
-            this.Info_Adresse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Adresse.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Adresse.ForeColor = System.Drawing.Color.White;
-            this.Info_Adresse.Location = new System.Drawing.Point(482, 308);
-            this.Info_Adresse.Name = "Info_Adresse";
-            this.Info_Adresse.Size = new System.Drawing.Size(183, 23);
-            this.Info_Adresse.TabIndex = 183;
-            this.Info_Adresse.UseCustomBackColor = true;
-            this.Info_Adresse.UseCustomForeColor = true;
-            // 
-            // Info_Pays
-            // 
-            this.Info_Pays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Pays.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Pays.ForeColor = System.Drawing.Color.White;
-            this.Info_Pays.Location = new System.Drawing.Point(482, 359);
-            this.Info_Pays.Name = "Info_Pays";
-            this.Info_Pays.Size = new System.Drawing.Size(183, 23);
-            this.Info_Pays.TabIndex = 183;
-            this.Info_Pays.UseCustomBackColor = true;
-            this.Info_Pays.UseCustomForeColor = true;
-            // 
-            // Info_Region
-            // 
-            this.Info_Region.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Region.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Region.ForeColor = System.Drawing.Color.White;
-            this.Info_Region.Location = new System.Drawing.Point(482, 414);
-            this.Info_Region.Name = "Info_Region";
-            this.Info_Region.Size = new System.Drawing.Size(183, 23);
-            this.Info_Region.TabIndex = 183;
-            this.Info_Region.UseCustomBackColor = true;
-            this.Info_Region.UseCustomForeColor = true;
-            // 
-            // Info_Ville
-            // 
-            this.Info_Ville.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Ville.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Ville.ForeColor = System.Drawing.Color.White;
-            this.Info_Ville.Location = new System.Drawing.Point(482, 467);
-            this.Info_Ville.Name = "Info_Ville";
-            this.Info_Ville.Size = new System.Drawing.Size(183, 23);
-            this.Info_Ville.TabIndex = 183;
-            this.Info_Ville.UseCustomBackColor = true;
-            this.Info_Ville.UseCustomForeColor = true;
+            this.Info_Poste.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Poste.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Poste.ForeColor = System.Drawing.Color.White;
+            this.Info_Poste.Location = new System.Drawing.Point(482, 575);
+            this.Info_Poste.Name = "Info_Poste";
+            this.Info_Poste.Size = new System.Drawing.Size(183, 23);
+            this.Info_Poste.TabIndex = 183;
+            this.Info_Poste.UseCustomBackColor = true;
+            this.Info_Poste.UseCustomForeColor = true;
             // 
             // Info_Departement
             // 
@@ -808,17 +584,241 @@
             this.Info_Departement.UseCustomBackColor = true;
             this.Info_Departement.UseCustomForeColor = true;
             // 
-            // Info_Poste
+            // Info_Ville
             // 
-            this.Info_Poste.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Info_Poste.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Info_Poste.ForeColor = System.Drawing.Color.White;
-            this.Info_Poste.Location = new System.Drawing.Point(482, 575);
-            this.Info_Poste.Name = "Info_Poste";
-            this.Info_Poste.Size = new System.Drawing.Size(183, 23);
-            this.Info_Poste.TabIndex = 183;
-            this.Info_Poste.UseCustomBackColor = true;
-            this.Info_Poste.UseCustomForeColor = true;
+            this.Info_Ville.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Ville.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Ville.ForeColor = System.Drawing.Color.White;
+            this.Info_Ville.Location = new System.Drawing.Point(482, 467);
+            this.Info_Ville.Name = "Info_Ville";
+            this.Info_Ville.Size = new System.Drawing.Size(183, 23);
+            this.Info_Ville.TabIndex = 183;
+            this.Info_Ville.UseCustomBackColor = true;
+            this.Info_Ville.UseCustomForeColor = true;
+            // 
+            // Info_Region
+            // 
+            this.Info_Region.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Region.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Region.ForeColor = System.Drawing.Color.White;
+            this.Info_Region.Location = new System.Drawing.Point(482, 414);
+            this.Info_Region.Name = "Info_Region";
+            this.Info_Region.Size = new System.Drawing.Size(183, 23);
+            this.Info_Region.TabIndex = 183;
+            this.Info_Region.UseCustomBackColor = true;
+            this.Info_Region.UseCustomForeColor = true;
+            // 
+            // Info_Pays
+            // 
+            this.Info_Pays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Pays.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Pays.ForeColor = System.Drawing.Color.White;
+            this.Info_Pays.Location = new System.Drawing.Point(482, 359);
+            this.Info_Pays.Name = "Info_Pays";
+            this.Info_Pays.Size = new System.Drawing.Size(183, 23);
+            this.Info_Pays.TabIndex = 183;
+            this.Info_Pays.UseCustomBackColor = true;
+            this.Info_Pays.UseCustomForeColor = true;
+            // 
+            // Info_Adresse
+            // 
+            this.Info_Adresse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Adresse.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Adresse.ForeColor = System.Drawing.Color.White;
+            this.Info_Adresse.Location = new System.Drawing.Point(482, 308);
+            this.Info_Adresse.Name = "Info_Adresse";
+            this.Info_Adresse.Size = new System.Drawing.Size(183, 23);
+            this.Info_Adresse.TabIndex = 183;
+            this.Info_Adresse.UseCustomBackColor = true;
+            this.Info_Adresse.UseCustomForeColor = true;
+            // 
+            // Info_Salaire
+            // 
+            this.Info_Salaire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Salaire.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Salaire.ForeColor = System.Drawing.Color.White;
+            this.Info_Salaire.Location = new System.Drawing.Point(482, 255);
+            this.Info_Salaire.Name = "Info_Salaire";
+            this.Info_Salaire.Size = new System.Drawing.Size(183, 23);
+            this.Info_Salaire.TabIndex = 183;
+            this.Info_Salaire.UseCustomBackColor = true;
+            this.Info_Salaire.UseCustomForeColor = true;
+            // 
+            // Info_DateE
+            // 
+            this.Info_DateE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_DateE.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_DateE.ForeColor = System.Drawing.Color.White;
+            this.Info_DateE.Location = new System.Drawing.Point(135, 575);
+            this.Info_DateE.Name = "Info_DateE";
+            this.Info_DateE.Size = new System.Drawing.Size(183, 23);
+            this.Info_DateE.TabIndex = 183;
+            this.Info_DateE.UseCustomBackColor = true;
+            this.Info_DateE.UseCustomForeColor = true;
+            // 
+            // Info_DateN
+            // 
+            this.Info_DateN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_DateN.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_DateN.ForeColor = System.Drawing.Color.White;
+            this.Info_DateN.Location = new System.Drawing.Point(135, 522);
+            this.Info_DateN.Name = "Info_DateN";
+            this.Info_DateN.Size = new System.Drawing.Size(183, 23);
+            this.Info_DateN.TabIndex = 183;
+            this.Info_DateN.UseCustomBackColor = true;
+            this.Info_DateN.UseCustomForeColor = true;
+            // 
+            // Info_Email
+            // 
+            this.Info_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Email.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Email.ForeColor = System.Drawing.Color.White;
+            this.Info_Email.Location = new System.Drawing.Point(135, 467);
+            this.Info_Email.Name = "Info_Email";
+            this.Info_Email.Size = new System.Drawing.Size(183, 23);
+            this.Info_Email.TabIndex = 183;
+            this.Info_Email.UseCustomBackColor = true;
+            this.Info_Email.UseCustomForeColor = true;
+            // 
+            // Info_Tel
+            // 
+            this.Info_Tel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Info_Tel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Info_Tel.ForeColor = System.Drawing.Color.White;
+            this.Info_Tel.Location = new System.Drawing.Point(135, 414);
+            this.Info_Tel.Name = "Info_Tel";
+            this.Info_Tel.Size = new System.Drawing.Size(183, 23);
+            this.Info_Tel.TabIndex = 183;
+            this.Info_Tel.UseCustomBackColor = true;
+            this.Info_Tel.UseCustomForeColor = true;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel12.ForeColor = System.Drawing.Color.White;
+            this.metroLabel12.Location = new System.Drawing.Point(370, 257);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel12.TabIndex = 190;
+            this.metroLabel12.Text = "Salaire";
+            this.metroLabel12.UseCustomBackColor = true;
+            this.metroLabel12.UseCustomForeColor = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.ForeColor = System.Drawing.Color.White;
+            this.metroLabel6.Location = new System.Drawing.Point(370, 469);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel6.TabIndex = 192;
+            this.metroLabel6.Text = "Ville";
+            this.metroLabel6.UseCustomBackColor = true;
+            this.metroLabel6.UseCustomForeColor = true;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.ForeColor = System.Drawing.Color.White;
+            this.metroLabel4.Location = new System.Drawing.Point(370, 522);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(90, 19);
+            this.metroLabel4.TabIndex = 193;
+            this.metroLabel4.Text = "Departement";
+            this.metroLabel4.UseCustomBackColor = true;
+            this.metroLabel4.UseCustomForeColor = true;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.ForeColor = System.Drawing.Color.White;
+            this.metroLabel2.Location = new System.Drawing.Point(370, 363);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel2.TabIndex = 194;
+            this.metroLabel2.Text = "Pays";
+            this.metroLabel2.UseCustomBackColor = true;
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel8.ForeColor = System.Drawing.Color.White;
+            this.metroLabel8.Location = new System.Drawing.Point(21, 577);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(105, 19);
+            this.metroLabel8.TabIndex = 170;
+            this.metroLabel8.Text = "Date Embauche";
+            this.metroLabel8.UseCustomBackColor = true;
+            this.metroLabel8.UseCustomForeColor = true;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel7.ForeColor = System.Drawing.Color.White;
+            this.metroLabel7.Location = new System.Drawing.Point(27, 577);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel7.TabIndex = 171;
+            this.metroLabel7.UseCustomBackColor = true;
+            this.metroLabel7.UseCustomForeColor = true;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.ForeColor = System.Drawing.Color.White;
+            this.metroLabel1.Location = new System.Drawing.Point(21, 469);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel1.TabIndex = 176;
+            this.metroLabel1.Text = "E-Mail";
+            this.metroLabel1.UseCustomBackColor = true;
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
+            // metroLabel35
+            // 
+            this.metroLabel35.AutoSize = true;
+            this.metroLabel35.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel35.ForeColor = System.Drawing.Color.White;
+            this.metroLabel35.Location = new System.Drawing.Point(21, 310);
+            this.metroLabel35.Name = "metroLabel35";
+            this.metroLabel35.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel35.TabIndex = 183;
+            this.metroLabel35.Text = "Nom";
+            this.metroLabel35.UseCustomBackColor = true;
+            this.metroLabel35.UseCustomForeColor = true;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel10.ForeColor = System.Drawing.Color.White;
+            this.metroLabel10.Location = new System.Drawing.Point(21, 363);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel10.TabIndex = 185;
+            this.metroLabel10.Text = "Prenom";
+            this.metroLabel10.UseCustomBackColor = true;
+            this.metroLabel10.UseCustomForeColor = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.ForeColor = System.Drawing.Color.White;
+            this.metroLabel3.Location = new System.Drawing.Point(370, 416);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(51, 19);
+            this.metroLabel3.TabIndex = 195;
+            this.metroLabel3.Text = "Region";
+            this.metroLabel3.UseCustomBackColor = true;
+            this.metroLabel3.UseCustomForeColor = true;
             // 
             // EmployeInfo
             // 
@@ -880,27 +880,11 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroLabel metroLabel35;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private MetroFramework.Controls.MetroLabel metroLabel31;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox13;
-        private MetroFramework.Controls.MetroTextBox metroTextBox12;
         private MetroFramework.Controls.MetroTextBox metroTextBox8;
-        private MetroFramework.Controls.MetroTextBox metroTextBox11;
-        private MetroFramework.Controls.MetroTextBox metroTextBox9;
-        private MetroFramework.Controls.MetroTextBox metroTextBox10;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroPanel metroPanel5;
         private MetroFramework.Controls.MetroPanel metroPanel6;
@@ -909,22 +893,38 @@
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroLabel metroLabel15;
-        public MetroFramework.Controls.MetroLabel Info_NomPrenom;
-        public MetroFramework.Controls.MetroLabel Info_PosteNom;
+        private MetroFramework.Controls.MetroTextBox metroTextBox13;
+        private MetroFramework.Controls.MetroTextBox metroTextBox12;
+        private MetroFramework.Controls.MetroTextBox metroTextBox11;
+        private MetroFramework.Controls.MetroTextBox metroTextBox9;
+        private MetroFramework.Controls.MetroTextBox metroTextBox10;
+        private MetroFramework.Controls.MetroLabel metroLabel31;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel35;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
         public MetroFramework.Controls.MetroLabel Info_IdEmp;
+        public MetroFramework.Controls.MetroLabel Info_Departement;
+        public MetroFramework.Controls.MetroLabel Info_Ville;
+        public MetroFramework.Controls.MetroLabel Info_Region;
+        public MetroFramework.Controls.MetroLabel Info_Pays;
+        public MetroFramework.Controls.MetroLabel Info_Adresse;
+        public MetroFramework.Controls.MetroLabel Info_Salaire;
+        public MetroFramework.Controls.MetroLabel Info_DateE;
+        public MetroFramework.Controls.MetroLabel Info_DateN;
+        public MetroFramework.Controls.MetroLabel Info_Email;
+        public MetroFramework.Controls.MetroLabel Info_Tel;
         public MetroFramework.Controls.MetroLabel Info_Sexe;
         public MetroFramework.Controls.MetroLabel Info_Nom;
         public MetroFramework.Controls.MetroLabel Info_Prenom;
-        public MetroFramework.Controls.MetroLabel Info_Tel;
-        public MetroFramework.Controls.MetroLabel Info_Email;
-        public MetroFramework.Controls.MetroLabel Info_DateN;
-        public MetroFramework.Controls.MetroLabel Info_DateE;
-        public MetroFramework.Controls.MetroLabel Info_Salaire;
-        public MetroFramework.Controls.MetroLabel Info_Adresse;
-        public MetroFramework.Controls.MetroLabel Info_Pays;
-        public MetroFramework.Controls.MetroLabel Info_Region;
-        public MetroFramework.Controls.MetroLabel Info_Ville;
-        public MetroFramework.Controls.MetroLabel Info_Departement;
         public MetroFramework.Controls.MetroLabel Info_Poste;
+        public MetroFramework.Controls.MetroLabel Info_NomPrenom;
+        public MetroFramework.Controls.MetroLabel Info_PosteNom;
     }
 }

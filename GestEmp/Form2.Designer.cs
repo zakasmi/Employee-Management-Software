@@ -29,21 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.TXB_Modifier_Pays = new MetroFramework.Controls.MetroComboBox();
-            this.TXB_Modifier_Region = new MetroFramework.Controls.MetroComboBox();
-            this.TXB_Modifier_Departement = new MetroFramework.Controls.MetroComboBox();
-            this.TXB_Modifier_Ville = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.TXB_Mofdifier_NomPrenom = new MetroFramework.Controls.MetroLabel();
-            this.TXB_Modifier_IdEmp2 = new MetroFramework.Controls.MetroLabel();
-            this.TXB_Modifier_DateN = new MetroFramework.Controls.MetroDateTime();
+            this.LBL_Mofdifier_NomPrenom = new MetroFramework.Controls.MetroLabel();
+            this.LBL_Modifier_IdEmp2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.metroTextBox13 = new MetroFramework.Controls.MetroTextBox();
@@ -57,27 +46,39 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.TXB_Modifier_Poste2 = new MetroFramework.Controls.MetroLabel();
+            this.LBL_Modifier_Poste2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel35 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.DTP_Modifier_DateE = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.CB_Modifier_Poste = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.DTP_Modifier_DateN = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.CB_Modifier_Ville = new MetroFramework.Controls.MetroComboBox();
+            this.CB_Modifier_Departement = new MetroFramework.Controls.MetroComboBox();
+            this.CB_Modifier_Region = new MetroFramework.Controls.MetroComboBox();
+            this.CB_Modifier_Pays = new MetroFramework.Controls.MetroComboBox();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.RB_Modifier_F = new MetroFramework.Controls.MetroRadioButton();
+            this.RB_Modifier_M = new MetroFramework.Controls.MetroRadioButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.TXB_Modifier_Email = new MetroFramework.Controls.MetroTextBox();
             this.TXB_Modifier_Salaire = new MetroFramework.Controls.MetroTextBox();
             this.TXB_Modifier_Tel = new MetroFramework.Controls.MetroTextBox();
             this.TXB_Modifier_Adresse = new MetroFramework.Controls.MetroTextBox();
             this.TXB_Modifier_Prenom = new MetroFramework.Controls.MetroTextBox();
             this.TXB_Modifier_Nom = new MetroFramework.Controls.MetroTextBox();
-            this.RB_Modifier_F = new MetroFramework.Controls.MetroRadioButton();
-            this.RB_Modifier_M = new MetroFramework.Controls.MetroRadioButton();
-            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
-            this.TXB_Modifier_DateE = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.TXB_Modifier_Poste = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,82 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.metroPanel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TXB_Modifier_Pays
-            // 
-            this.TXB_Modifier_Pays.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.TXB_Modifier_Pays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TXB_Modifier_Pays.ForeColor = System.Drawing.Color.White;
-            this.TXB_Modifier_Pays.FormattingEnabled = true;
-            this.TXB_Modifier_Pays.IntegralHeight = false;
-            this.TXB_Modifier_Pays.ItemHeight = 23;
-            this.TXB_Modifier_Pays.Location = new System.Drawing.Point(794, 182);
-            this.TXB_Modifier_Pays.Name = "TXB_Modifier_Pays";
-            this.TXB_Modifier_Pays.Size = new System.Drawing.Size(191, 29);
-            this.TXB_Modifier_Pays.Style = MetroFramework.MetroColorStyle.Black;
-            this.TXB_Modifier_Pays.TabIndex = 9;
-            this.TXB_Modifier_Pays.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TXB_Modifier_Pays.UseCustomBackColor = true;
-            this.TXB_Modifier_Pays.UseCustomForeColor = true;
-            this.TXB_Modifier_Pays.UseSelectable = true;
-            this.TXB_Modifier_Pays.UseStyleColors = true;
-            // 
-            // TXB_Modifier_Region
-            // 
-            this.TXB_Modifier_Region.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.TXB_Modifier_Region.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TXB_Modifier_Region.ForeColor = System.Drawing.Color.White;
-            this.TXB_Modifier_Region.FormattingEnabled = true;
-            this.TXB_Modifier_Region.IntegralHeight = false;
-            this.TXB_Modifier_Region.ItemHeight = 23;
-            this.TXB_Modifier_Region.Location = new System.Drawing.Point(794, 237);
-            this.TXB_Modifier_Region.Name = "TXB_Modifier_Region";
-            this.TXB_Modifier_Region.Size = new System.Drawing.Size(191, 29);
-            this.TXB_Modifier_Region.Style = MetroFramework.MetroColorStyle.Black;
-            this.TXB_Modifier_Region.TabIndex = 10;
-            this.TXB_Modifier_Region.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TXB_Modifier_Region.UseCustomBackColor = true;
-            this.TXB_Modifier_Region.UseCustomForeColor = true;
-            this.TXB_Modifier_Region.UseSelectable = true;
-            this.TXB_Modifier_Region.UseStyleColors = true;
-            // 
-            // TXB_Modifier_Departement
-            // 
-            this.TXB_Modifier_Departement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.TXB_Modifier_Departement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TXB_Modifier_Departement.ForeColor = System.Drawing.Color.White;
-            this.TXB_Modifier_Departement.FormattingEnabled = true;
-            this.TXB_Modifier_Departement.IntegralHeight = false;
-            this.TXB_Modifier_Departement.ItemHeight = 23;
-            this.TXB_Modifier_Departement.Location = new System.Drawing.Point(794, 347);
-            this.TXB_Modifier_Departement.Name = "TXB_Modifier_Departement";
-            this.TXB_Modifier_Departement.Size = new System.Drawing.Size(191, 29);
-            this.TXB_Modifier_Departement.Style = MetroFramework.MetroColorStyle.Black;
-            this.TXB_Modifier_Departement.TabIndex = 12;
-            this.TXB_Modifier_Departement.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TXB_Modifier_Departement.UseCustomBackColor = true;
-            this.TXB_Modifier_Departement.UseCustomForeColor = true;
-            this.TXB_Modifier_Departement.UseSelectable = true;
-            this.TXB_Modifier_Departement.UseStyleColors = true;
-            // 
-            // TXB_Modifier_Ville
-            // 
-            this.TXB_Modifier_Ville.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.TXB_Modifier_Ville.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TXB_Modifier_Ville.ForeColor = System.Drawing.Color.White;
-            this.TXB_Modifier_Ville.FormattingEnabled = true;
-            this.TXB_Modifier_Ville.IntegralHeight = false;
-            this.TXB_Modifier_Ville.ItemHeight = 23;
-            this.TXB_Modifier_Ville.Location = new System.Drawing.Point(794, 292);
-            this.TXB_Modifier_Ville.Name = "TXB_Modifier_Ville";
-            this.TXB_Modifier_Ville.Size = new System.Drawing.Size(191, 29);
-            this.TXB_Modifier_Ville.Style = MetroFramework.MetroColorStyle.Black;
-            this.TXB_Modifier_Ville.TabIndex = 11;
-            this.TXB_Modifier_Ville.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TXB_Modifier_Ville.UseCustomBackColor = true;
-            this.TXB_Modifier_Ville.UseCustomForeColor = true;
-            this.TXB_Modifier_Ville.UseSelectable = true;
-            this.TXB_Modifier_Ville.UseStyleColors = true;
             // 
             // metroLabel1
             // 
@@ -175,58 +100,6 @@
             this.metroLabel1.UseCustomBackColor = true;
             this.metroLabel1.UseCustomForeColor = true;
             // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.ForeColor = System.Drawing.Color.White;
-            this.metroLabel3.Location = new System.Drawing.Point(676, 242);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(51, 19);
-            this.metroLabel3.TabIndex = 144;
-            this.metroLabel3.Text = "Region";
-            this.metroLabel3.UseCustomBackColor = true;
-            this.metroLabel3.UseCustomForeColor = true;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.ForeColor = System.Drawing.Color.White;
-            this.metroLabel2.Location = new System.Drawing.Point(676, 187);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(37, 19);
-            this.metroLabel2.TabIndex = 143;
-            this.metroLabel2.Text = "Pays";
-            this.metroLabel2.UseCustomBackColor = true;
-            this.metroLabel2.UseCustomForeColor = true;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(676, 352);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(90, 19);
-            this.metroLabel4.TabIndex = 142;
-            this.metroLabel4.Text = "Departement";
-            this.metroLabel4.UseCustomBackColor = true;
-            this.metroLabel4.UseCustomForeColor = true;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.ForeColor = System.Drawing.Color.White;
-            this.metroLabel6.Location = new System.Drawing.Point(676, 297);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(34, 19);
-            this.metroLabel6.TabIndex = 141;
-            this.metroLabel6.Text = "Ville";
-            this.metroLabel6.UseCustomBackColor = true;
-            this.metroLabel6.UseCustomForeColor = true;
-            // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
@@ -240,67 +113,35 @@
             this.metroLabel7.UseCustomBackColor = true;
             this.metroLabel7.UseCustomForeColor = true;
             // 
-            // metroLabel8
+            // LBL_Mofdifier_NomPrenom
             // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.ForeColor = System.Drawing.Color.White;
-            this.metroLabel8.Location = new System.Drawing.Point(676, 86);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel8.TabIndex = 139;
-            this.metroLabel8.Text = "Salaire";
-            this.metroLabel8.UseCustomBackColor = true;
-            this.metroLabel8.UseCustomForeColor = true;
+            this.LBL_Mofdifier_NomPrenom.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.LBL_Mofdifier_NomPrenom.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LBL_Mofdifier_NomPrenom.ForeColor = System.Drawing.Color.White;
+            this.LBL_Mofdifier_NomPrenom.Location = new System.Drawing.Point(72, 220);
+            this.LBL_Mofdifier_NomPrenom.Name = "LBL_Mofdifier_NomPrenom";
+            this.LBL_Mofdifier_NomPrenom.Size = new System.Drawing.Size(139, 36);
+            this.LBL_Mofdifier_NomPrenom.TabIndex = 147;
+            this.LBL_Mofdifier_NomPrenom.Text = "Zakaria Kasmi";
+            this.LBL_Mofdifier_NomPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LBL_Mofdifier_NomPrenom.UseCustomBackColor = true;
+            this.LBL_Mofdifier_NomPrenom.UseCustomForeColor = true;
+            this.LBL_Mofdifier_NomPrenom.Click += new System.EventHandler(this.metroLabel19_Click);
             // 
-            // metroLabel9
+            // LBL_Modifier_IdEmp2
             // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel9.ForeColor = System.Drawing.Color.White;
-            this.metroLabel9.Location = new System.Drawing.Point(676, 135);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel9.TabIndex = 138;
-            this.metroLabel9.Text = "Adresse";
-            this.metroLabel9.UseCustomBackColor = true;
-            this.metroLabel9.UseCustomForeColor = true;
-            // 
-            // TXB_Mofdifier_NomPrenom
-            // 
-            this.TXB_Mofdifier_NomPrenom.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.TXB_Mofdifier_NomPrenom.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.TXB_Mofdifier_NomPrenom.ForeColor = System.Drawing.Color.White;
-            this.TXB_Mofdifier_NomPrenom.Location = new System.Drawing.Point(72, 220);
-            this.TXB_Mofdifier_NomPrenom.Name = "TXB_Mofdifier_NomPrenom";
-            this.TXB_Mofdifier_NomPrenom.Size = new System.Drawing.Size(139, 36);
-            this.TXB_Mofdifier_NomPrenom.TabIndex = 147;
-            this.TXB_Mofdifier_NomPrenom.Text = "Zakaria Kasmi";
-            this.TXB_Mofdifier_NomPrenom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TXB_Mofdifier_NomPrenom.UseCustomBackColor = true;
-            this.TXB_Mofdifier_NomPrenom.UseCustomForeColor = true;
-            this.TXB_Mofdifier_NomPrenom.Click += new System.EventHandler(this.metroLabel19_Click);
-            // 
-            // TXB_Modifier_IdEmp2
-            // 
-            this.TXB_Modifier_IdEmp2.AutoSize = true;
-            this.TXB_Modifier_IdEmp2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.TXB_Modifier_IdEmp2.ForeColor = System.Drawing.Color.White;
-            this.TXB_Modifier_IdEmp2.Location = new System.Drawing.Point(107, 295);
-            this.TXB_Modifier_IdEmp2.Name = "TXB_Modifier_IdEmp2";
-            this.TXB_Modifier_IdEmp2.Size = new System.Drawing.Size(69, 19);
-            this.TXB_Modifier_IdEmp2.TabIndex = 136;
-            this.TXB_Modifier_IdEmp2.Text = "EMP0015";
-            this.TXB_Modifier_IdEmp2.UseCustomBackColor = true;
-            this.TXB_Modifier_IdEmp2.UseCustomForeColor = true;
-            // 
-            // TXB_Modifier_DateN
-            // 
-            this.TXB_Modifier_DateN.Location = new System.Drawing.Point(430, 347);
-            this.TXB_Modifier_DateN.MinimumSize = new System.Drawing.Size(0, 29);
-            this.TXB_Modifier_DateN.Name = "TXB_Modifier_DateN";
-            this.TXB_Modifier_DateN.Size = new System.Drawing.Size(191, 29);
-            this.TXB_Modifier_DateN.TabIndex = 4;
+            this.LBL_Modifier_IdEmp2.AutoSize = true;
+            this.LBL_Modifier_IdEmp2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.LBL_Modifier_IdEmp2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LBL_Modifier_IdEmp2.ForeColor = System.Drawing.Color.White;
+            this.LBL_Modifier_IdEmp2.Location = new System.Drawing.Point(96, 314);
+            this.LBL_Modifier_IdEmp2.Name = "LBL_Modifier_IdEmp2";
+            this.LBL_Modifier_IdEmp2.Size = new System.Drawing.Size(90, 25);
+            this.LBL_Modifier_IdEmp2.TabIndex = 136;
+            this.LBL_Modifier_IdEmp2.Text = "EMP0015";
+            this.LBL_Modifier_IdEmp2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LBL_Modifier_IdEmp2.UseCustomBackColor = true;
+            this.LBL_Modifier_IdEmp2.UseCustomForeColor = true;
             // 
             // metroPanel2
             // 
@@ -333,7 +174,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox2.Image = global::GestEmp.Properties.Resources.Modify1;
+            this.pictureBox2.Image = global::GestEmp.Properties.Resources.Modify2;
             this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(20, 7);
             this.pictureBox2.Name = "pictureBox2";
@@ -547,9 +388,9 @@
             this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(5)))), ((int)(((byte)(58)))));
             this.metroPanel1.Controls.Add(this.button1);
             this.metroPanel1.Controls.Add(this.pictureBox4);
-            this.metroPanel1.Controls.Add(this.TXB_Mofdifier_NomPrenom);
-            this.metroPanel1.Controls.Add(this.TXB_Modifier_Poste2);
-            this.metroPanel1.Controls.Add(this.TXB_Modifier_IdEmp2);
+            this.metroPanel1.Controls.Add(this.LBL_Mofdifier_NomPrenom);
+            this.metroPanel1.Controls.Add(this.LBL_Modifier_Poste2);
+            this.metroPanel1.Controls.Add(this.LBL_Modifier_IdEmp2);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -595,18 +436,18 @@
             this.pictureBox4.TabIndex = 104;
             this.pictureBox4.TabStop = false;
             // 
-            // TXB_Modifier_Poste2
+            // LBL_Modifier_Poste2
             // 
-            this.TXB_Modifier_Poste2.AutoSize = true;
-            this.TXB_Modifier_Poste2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.TXB_Modifier_Poste2.ForeColor = System.Drawing.Color.White;
-            this.TXB_Modifier_Poste2.Location = new System.Drawing.Point(84, 266);
-            this.TXB_Modifier_Poste2.Name = "TXB_Modifier_Poste2";
-            this.TXB_Modifier_Poste2.Size = new System.Drawing.Size(114, 19);
-            this.TXB_Modifier_Poste2.TabIndex = 136;
-            this.TXB_Modifier_Poste2.Text = "Web Developer";
-            this.TXB_Modifier_Poste2.UseCustomBackColor = true;
-            this.TXB_Modifier_Poste2.UseCustomForeColor = true;
+            this.LBL_Modifier_Poste2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LBL_Modifier_Poste2.ForeColor = System.Drawing.Color.White;
+            this.LBL_Modifier_Poste2.Location = new System.Drawing.Point(12, 266);
+            this.LBL_Modifier_Poste2.Name = "LBL_Modifier_Poste2";
+            this.LBL_Modifier_Poste2.Size = new System.Drawing.Size(249, 26);
+            this.LBL_Modifier_Poste2.TabIndex = 136;
+            this.LBL_Modifier_Poste2.Text = "Web Developer";
+            this.LBL_Modifier_Poste2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LBL_Modifier_Poste2.UseCustomBackColor = true;
+            this.LBL_Modifier_Poste2.UseCustomForeColor = true;
             // 
             // metroLabel10
             // 
@@ -669,6 +510,7 @@
             this.button4.TabIndex = 154;
             this.button4.Text = " Vider";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button3
             // 
@@ -687,6 +529,256 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "    Valider";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // metroLabel26
+            // 
+            this.metroLabel26.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel26.AutoSize = true;
+            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel26.ForeColor = System.Drawing.Color.White;
+            this.metroLabel26.Location = new System.Drawing.Point(309, 407);
+            this.metroLabel26.Name = "metroLabel26";
+            this.metroLabel26.Size = new System.Drawing.Size(105, 19);
+            this.metroLabel26.TabIndex = 164;
+            this.metroLabel26.Text = "Date Embauche";
+            this.metroLabel26.UseCustomBackColor = true;
+            this.metroLabel26.UseCustomForeColor = true;
+            // 
+            // DTP_Modifier_DateE
+            // 
+            this.DTP_Modifier_DateE.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DTP_Modifier_DateE.Location = new System.Drawing.Point(430, 402);
+            this.DTP_Modifier_DateE.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DTP_Modifier_DateE.Name = "DTP_Modifier_DateE";
+            this.DTP_Modifier_DateE.Size = new System.Drawing.Size(191, 29);
+            this.DTP_Modifier_DateE.TabIndex = 163;
+            // 
+            // metroLabel14
+            // 
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel14.ForeColor = System.Drawing.Color.White;
+            this.metroLabel14.Location = new System.Drawing.Point(676, 407);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel14.TabIndex = 195;
+            this.metroLabel14.Text = "Poste";
+            this.metroLabel14.UseCustomBackColor = true;
+            this.metroLabel14.UseCustomForeColor = true;
+            // 
+            // CB_Modifier_Poste
+            // 
+            this.CB_Modifier_Poste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.CB_Modifier_Poste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CB_Modifier_Poste.ForeColor = System.Drawing.Color.White;
+            this.CB_Modifier_Poste.FormattingEnabled = true;
+            this.CB_Modifier_Poste.IntegralHeight = false;
+            this.CB_Modifier_Poste.ItemHeight = 23;
+            this.CB_Modifier_Poste.Location = new System.Drawing.Point(794, 402);
+            this.CB_Modifier_Poste.Name = "CB_Modifier_Poste";
+            this.CB_Modifier_Poste.Size = new System.Drawing.Size(191, 29);
+            this.CB_Modifier_Poste.Style = MetroFramework.MetroColorStyle.Black;
+            this.CB_Modifier_Poste.TabIndex = 12;
+            this.CB_Modifier_Poste.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CB_Modifier_Poste.UseCustomBackColor = true;
+            this.CB_Modifier_Poste.UseCustomForeColor = true;
+            this.CB_Modifier_Poste.UseSelectable = true;
+            this.CB_Modifier_Poste.UseStyleColors = true;
+            this.CB_Modifier_Poste.SelectedValueChanged += new System.EventHandler(this.CB_Modifier_Poste_SelectedValueChanged);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.ForeColor = System.Drawing.Color.White;
+            this.metroLabel5.Location = new System.Drawing.Point(309, 86);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(36, 19);
+            this.metroLabel5.TabIndex = 157;
+            this.metroLabel5.Text = "Sexe";
+            this.metroLabel5.UseCustomBackColor = true;
+            this.metroLabel5.UseCustomForeColor = true;
+            // 
+            // DTP_Modifier_DateN
+            // 
+            this.DTP_Modifier_DateN.Location = new System.Drawing.Point(430, 347);
+            this.DTP_Modifier_DateN.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DTP_Modifier_DateN.Name = "DTP_Modifier_DateN";
+            this.DTP_Modifier_DateN.Size = new System.Drawing.Size(191, 29);
+            this.DTP_Modifier_DateN.TabIndex = 4;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel9.ForeColor = System.Drawing.Color.White;
+            this.metroLabel9.Location = new System.Drawing.Point(676, 135);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel9.TabIndex = 138;
+            this.metroLabel9.Text = "Adresse";
+            this.metroLabel9.UseCustomBackColor = true;
+            this.metroLabel9.UseCustomForeColor = true;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel12.ForeColor = System.Drawing.Color.White;
+            this.metroLabel12.Location = new System.Drawing.Point(309, 242);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel12.TabIndex = 138;
+            this.metroLabel12.Text = "N Télephone";
+            this.metroLabel12.UseCustomBackColor = true;
+            this.metroLabel12.UseCustomForeColor = true;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel8.ForeColor = System.Drawing.Color.White;
+            this.metroLabel8.Location = new System.Drawing.Point(676, 86);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel8.TabIndex = 139;
+            this.metroLabel8.Text = "Salaire";
+            this.metroLabel8.UseCustomBackColor = true;
+            this.metroLabel8.UseCustomForeColor = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.ForeColor = System.Drawing.Color.White;
+            this.metroLabel6.Location = new System.Drawing.Point(676, 297);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(34, 19);
+            this.metroLabel6.TabIndex = 141;
+            this.metroLabel6.Text = "Ville";
+            this.metroLabel6.UseCustomBackColor = true;
+            this.metroLabel6.UseCustomForeColor = true;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.ForeColor = System.Drawing.Color.White;
+            this.metroLabel4.Location = new System.Drawing.Point(676, 352);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(90, 19);
+            this.metroLabel4.TabIndex = 142;
+            this.metroLabel4.Text = "Departement";
+            this.metroLabel4.UseCustomBackColor = true;
+            this.metroLabel4.UseCustomForeColor = true;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.ForeColor = System.Drawing.Color.White;
+            this.metroLabel2.Location = new System.Drawing.Point(676, 187);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel2.TabIndex = 143;
+            this.metroLabel2.Text = "Pays";
+            this.metroLabel2.UseCustomBackColor = true;
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.ForeColor = System.Drawing.Color.White;
+            this.metroLabel3.Location = new System.Drawing.Point(676, 242);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(51, 19);
+            this.metroLabel3.TabIndex = 144;
+            this.metroLabel3.Text = "Region";
+            this.metroLabel3.UseCustomBackColor = true;
+            this.metroLabel3.UseCustomForeColor = true;
+            // 
+            // CB_Modifier_Ville
+            // 
+            this.CB_Modifier_Ville.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.CB_Modifier_Ville.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CB_Modifier_Ville.ForeColor = System.Drawing.Color.White;
+            this.CB_Modifier_Ville.FormattingEnabled = true;
+            this.CB_Modifier_Ville.IntegralHeight = false;
+            this.CB_Modifier_Ville.ItemHeight = 23;
+            this.CB_Modifier_Ville.Location = new System.Drawing.Point(794, 292);
+            this.CB_Modifier_Ville.Name = "CB_Modifier_Ville";
+            this.CB_Modifier_Ville.Size = new System.Drawing.Size(191, 29);
+            this.CB_Modifier_Ville.Style = MetroFramework.MetroColorStyle.Black;
+            this.CB_Modifier_Ville.TabIndex = 11;
+            this.CB_Modifier_Ville.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CB_Modifier_Ville.UseCustomBackColor = true;
+            this.CB_Modifier_Ville.UseCustomForeColor = true;
+            this.CB_Modifier_Ville.UseSelectable = true;
+            this.CB_Modifier_Ville.UseStyleColors = true;
+            this.CB_Modifier_Ville.SelectedValueChanged += new System.EventHandler(this.CB_Modifier_Ville_SelectedValueChanged);
+            // 
+            // CB_Modifier_Departement
+            // 
+            this.CB_Modifier_Departement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.CB_Modifier_Departement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CB_Modifier_Departement.ForeColor = System.Drawing.Color.White;
+            this.CB_Modifier_Departement.FormattingEnabled = true;
+            this.CB_Modifier_Departement.IntegralHeight = false;
+            this.CB_Modifier_Departement.ItemHeight = 23;
+            this.CB_Modifier_Departement.Location = new System.Drawing.Point(794, 347);
+            this.CB_Modifier_Departement.Name = "CB_Modifier_Departement";
+            this.CB_Modifier_Departement.Size = new System.Drawing.Size(191, 29);
+            this.CB_Modifier_Departement.Style = MetroFramework.MetroColorStyle.Black;
+            this.CB_Modifier_Departement.TabIndex = 12;
+            this.CB_Modifier_Departement.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CB_Modifier_Departement.UseCustomBackColor = true;
+            this.CB_Modifier_Departement.UseCustomForeColor = true;
+            this.CB_Modifier_Departement.UseSelectable = true;
+            this.CB_Modifier_Departement.UseStyleColors = true;
+            this.CB_Modifier_Departement.SelectedValueChanged += new System.EventHandler(this.CB_Modifier_Departement_SelectedValueChanged);
+            // 
+            // CB_Modifier_Region
+            // 
+            this.CB_Modifier_Region.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.CB_Modifier_Region.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CB_Modifier_Region.ForeColor = System.Drawing.Color.White;
+            this.CB_Modifier_Region.FormattingEnabled = true;
+            this.CB_Modifier_Region.IntegralHeight = false;
+            this.CB_Modifier_Region.ItemHeight = 23;
+            this.CB_Modifier_Region.Location = new System.Drawing.Point(794, 237);
+            this.CB_Modifier_Region.Name = "CB_Modifier_Region";
+            this.CB_Modifier_Region.Size = new System.Drawing.Size(191, 29);
+            this.CB_Modifier_Region.Style = MetroFramework.MetroColorStyle.Black;
+            this.CB_Modifier_Region.TabIndex = 10;
+            this.CB_Modifier_Region.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CB_Modifier_Region.UseCustomBackColor = true;
+            this.CB_Modifier_Region.UseCustomForeColor = true;
+            this.CB_Modifier_Region.UseSelectable = true;
+            this.CB_Modifier_Region.UseStyleColors = true;
+            this.CB_Modifier_Region.SelectedValueChanged += new System.EventHandler(this.CB_Modifier_Region_SelectedValueChanged);
+            // 
+            // CB_Modifier_Pays
+            // 
+            this.CB_Modifier_Pays.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.CB_Modifier_Pays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CB_Modifier_Pays.ForeColor = System.Drawing.Color.White;
+            this.CB_Modifier_Pays.FormattingEnabled = true;
+            this.CB_Modifier_Pays.IntegralHeight = false;
+            this.CB_Modifier_Pays.ItemHeight = 23;
+            this.CB_Modifier_Pays.Location = new System.Drawing.Point(794, 182);
+            this.CB_Modifier_Pays.Name = "CB_Modifier_Pays";
+            this.CB_Modifier_Pays.Size = new System.Drawing.Size(191, 29);
+            this.CB_Modifier_Pays.Style = MetroFramework.MetroColorStyle.Black;
+            this.CB_Modifier_Pays.TabIndex = 9;
+            this.CB_Modifier_Pays.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.CB_Modifier_Pays.UseCustomBackColor = true;
+            this.CB_Modifier_Pays.UseCustomForeColor = true;
+            this.CB_Modifier_Pays.UseSelectable = true;
+            this.CB_Modifier_Pays.UseStyleColors = true;
+            this.CB_Modifier_Pays.SelectedIndexChanged += new System.EventHandler(this.CB_Modifier_Pays_SelectedIndexChanged);
+            this.CB_Modifier_Pays.SelectedValueChanged += new System.EventHandler(this.CB_Modifier_Pays_SelectedValueChanged);
             // 
             // metroPanel4
             // 
@@ -703,18 +795,51 @@
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
             // 
-            // metroLabel12
+            // RB_Modifier_F
             // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel12.ForeColor = System.Drawing.Color.White;
-            this.metroLabel12.Location = new System.Drawing.Point(309, 242);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel12.TabIndex = 138;
-            this.metroLabel12.Text = "N Télephone";
-            this.metroLabel12.UseCustomBackColor = true;
-            this.metroLabel12.UseCustomForeColor = true;
+            this.RB_Modifier_F.AutoSize = true;
+            this.RB_Modifier_F.ForeColor = System.Drawing.Color.White;
+            this.RB_Modifier_F.Location = new System.Drawing.Point(471, 88);
+            this.RB_Modifier_F.Name = "RB_Modifier_F";
+            this.RB_Modifier_F.Size = new System.Drawing.Size(29, 15);
+            this.RB_Modifier_F.TabIndex = 162;
+            this.RB_Modifier_F.Text = "F";
+            this.RB_Modifier_F.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.RB_Modifier_F.UseCustomForeColor = true;
+            this.RB_Modifier_F.UseSelectable = true;
+            // 
+            // RB_Modifier_M
+            // 
+            this.RB_Modifier_M.AutoSize = true;
+            this.RB_Modifier_M.ForeColor = System.Drawing.Color.White;
+            this.RB_Modifier_M.Location = new System.Drawing.Point(527, 88);
+            this.RB_Modifier_M.Name = "RB_Modifier_M";
+            this.RB_Modifier_M.Size = new System.Drawing.Size(34, 15);
+            this.RB_Modifier_M.TabIndex = 162;
+            this.RB_Modifier_M.Text = "M";
+            this.RB_Modifier_M.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.RB_Modifier_M.UseCustomForeColor = true;
+            this.RB_Modifier_M.UseSelectable = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::GestEmp.Properties.Resources.Undo;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(289, 48);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(59, 56);
+            this.button2.TabIndex = 154;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button2_MouseDown_1);
+            this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button2_MouseUp_1);
             // 
             // TXB_Modifier_Email
             // 
@@ -920,100 +1045,6 @@
             this.TXB_Modifier_Nom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TXB_Modifier_Nom.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // RB_Modifier_F
-            // 
-            this.RB_Modifier_F.AutoSize = true;
-            this.RB_Modifier_F.ForeColor = System.Drawing.Color.White;
-            this.RB_Modifier_F.Location = new System.Drawing.Point(471, 88);
-            this.RB_Modifier_F.Name = "RB_Modifier_F";
-            this.RB_Modifier_F.Size = new System.Drawing.Size(29, 15);
-            this.RB_Modifier_F.TabIndex = 162;
-            this.RB_Modifier_F.Text = "F";
-            this.RB_Modifier_F.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.RB_Modifier_F.UseCustomForeColor = true;
-            this.RB_Modifier_F.UseSelectable = true;
-            // 
-            // RB_Modifier_M
-            // 
-            this.RB_Modifier_M.AutoSize = true;
-            this.RB_Modifier_M.ForeColor = System.Drawing.Color.White;
-            this.RB_Modifier_M.Location = new System.Drawing.Point(527, 88);
-            this.RB_Modifier_M.Name = "RB_Modifier_M";
-            this.RB_Modifier_M.Size = new System.Drawing.Size(34, 15);
-            this.RB_Modifier_M.TabIndex = 162;
-            this.RB_Modifier_M.Text = "M";
-            this.RB_Modifier_M.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.RB_Modifier_M.UseCustomForeColor = true;
-            this.RB_Modifier_M.UseSelectable = true;
-            // 
-            // metroLabel26
-            // 
-            this.metroLabel26.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel26.AutoSize = true;
-            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel26.ForeColor = System.Drawing.Color.White;
-            this.metroLabel26.Location = new System.Drawing.Point(309, 407);
-            this.metroLabel26.Name = "metroLabel26";
-            this.metroLabel26.Size = new System.Drawing.Size(105, 19);
-            this.metroLabel26.TabIndex = 164;
-            this.metroLabel26.Text = "Date Embauche";
-            this.metroLabel26.UseCustomBackColor = true;
-            this.metroLabel26.UseCustomForeColor = true;
-            // 
-            // TXB_Modifier_DateE
-            // 
-            this.TXB_Modifier_DateE.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TXB_Modifier_DateE.Location = new System.Drawing.Point(430, 402);
-            this.TXB_Modifier_DateE.MinimumSize = new System.Drawing.Size(0, 29);
-            this.TXB_Modifier_DateE.Name = "TXB_Modifier_DateE";
-            this.TXB_Modifier_DateE.Size = new System.Drawing.Size(191, 29);
-            this.TXB_Modifier_DateE.TabIndex = 163;
-            // 
-            // metroLabel14
-            // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel14.ForeColor = System.Drawing.Color.White;
-            this.metroLabel14.Location = new System.Drawing.Point(676, 407);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(43, 19);
-            this.metroLabel14.TabIndex = 195;
-            this.metroLabel14.Text = "Poste";
-            this.metroLabel14.UseCustomBackColor = true;
-            this.metroLabel14.UseCustomForeColor = true;
-            // 
-            // TXB_Modifier_Poste
-            // 
-            this.TXB_Modifier_Poste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.TXB_Modifier_Poste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TXB_Modifier_Poste.ForeColor = System.Drawing.Color.White;
-            this.TXB_Modifier_Poste.FormattingEnabled = true;
-            this.TXB_Modifier_Poste.IntegralHeight = false;
-            this.TXB_Modifier_Poste.ItemHeight = 23;
-            this.TXB_Modifier_Poste.Location = new System.Drawing.Point(794, 402);
-            this.TXB_Modifier_Poste.Name = "TXB_Modifier_Poste";
-            this.TXB_Modifier_Poste.Size = new System.Drawing.Size(191, 29);
-            this.TXB_Modifier_Poste.Style = MetroFramework.MetroColorStyle.Black;
-            this.TXB_Modifier_Poste.TabIndex = 12;
-            this.TXB_Modifier_Poste.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.TXB_Modifier_Poste.UseCustomBackColor = true;
-            this.TXB_Modifier_Poste.UseCustomForeColor = true;
-            this.TXB_Modifier_Poste.UseSelectable = true;
-            this.TXB_Modifier_Poste.UseStyleColors = true;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.ForeColor = System.Drawing.Color.White;
-            this.metroLabel5.Location = new System.Drawing.Point(309, 86);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel5.TabIndex = 157;
-            this.metroLabel5.Text = "Sexe";
-            this.metroLabel5.UseCustomBackColor = true;
-            this.metroLabel5.UseCustomForeColor = true;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1022,7 +1053,8 @@
             this.ClientSize = new System.Drawing.Size(997, 538);
             this.Controls.Add(this.metroLabel14);
             this.Controls.Add(this.metroLabel26);
-            this.Controls.Add(this.TXB_Modifier_DateE);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.DTP_Modifier_DateE);
             this.Controls.Add(this.RB_Modifier_M);
             this.Controls.Add(this.RB_Modifier_F);
             this.Controls.Add(this.metroPanel4);
@@ -1032,11 +1064,11 @@
             this.Controls.Add(this.metroLabel35);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroPanel2);
-            this.Controls.Add(this.TXB_Modifier_Pays);
-            this.Controls.Add(this.TXB_Modifier_Region);
-            this.Controls.Add(this.TXB_Modifier_Poste);
-            this.Controls.Add(this.TXB_Modifier_Departement);
-            this.Controls.Add(this.TXB_Modifier_Ville);
+            this.Controls.Add(this.CB_Modifier_Pays);
+            this.Controls.Add(this.CB_Modifier_Region);
+            this.Controls.Add(this.CB_Modifier_Poste);
+            this.Controls.Add(this.CB_Modifier_Departement);
+            this.Controls.Add(this.CB_Modifier_Ville);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -1046,7 +1078,7 @@
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.metroLabel9);
-            this.Controls.Add(this.TXB_Modifier_DateN);
+            this.Controls.Add(this.DTP_Modifier_DateN);
             this.Controls.Add(this.TXB_Modifier_Email);
             this.Controls.Add(this.TXB_Modifier_Salaire);
             this.Controls.Add(this.TXB_Modifier_Tel);
@@ -1075,26 +1107,8 @@
 
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private MetroFramework.Controls.MetroComboBox TXB_Modifier_Pays;
-        private MetroFramework.Controls.MetroComboBox TXB_Modifier_Region;
-        private MetroFramework.Controls.MetroComboBox TXB_Modifier_Departement;
-        private MetroFramework.Controls.MetroComboBox TXB_Modifier_Ville;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroLabel TXB_Mofdifier_NomPrenom;
-        private MetroFramework.Controls.MetroLabel TXB_Modifier_IdEmp2;
-        private MetroFramework.Controls.MetroDateTime TXB_Modifier_DateN;
-        private MetroFramework.Controls.MetroTextBox TXB_Modifier_Email;
-        private MetroFramework.Controls.MetroTextBox TXB_Modifier_Salaire;
-        private MetroFramework.Controls.MetroTextBox TXB_Modifier_Adresse;
-        private MetroFramework.Controls.MetroTextBox TXB_Modifier_Prenom;
-        private MetroFramework.Controls.MetroTextBox TXB_Modifier_Nom;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroTextBox metroTextBox13;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1107,20 +1121,39 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private MetroFramework.Controls.MetroLabel TXB_Modifier_Poste2;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroLabel metroLabel35;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroPanel metroPanel4;
         private System.Windows.Forms.Button button1;
-        private MetroFramework.Controls.MetroTextBox TXB_Modifier_Tel;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroRadioButton RB_Modifier_F;
-        private MetroFramework.Controls.MetroRadioButton RB_Modifier_M;
         private MetroFramework.Controls.MetroLabel metroLabel26;
-        private MetroFramework.Controls.MetroDateTime TXB_Modifier_DateE;
         private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroComboBox TXB_Modifier_Poste;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        public MetroFramework.Controls.MetroDateTime DTP_Modifier_DateE;
+        private MetroFramework.Controls.MetroLabel LBL_Mofdifier_NomPrenom;
+        private MetroFramework.Controls.MetroLabel LBL_Modifier_Poste2;
+        public MetroFramework.Controls.MetroDateTime DTP_Modifier_DateN;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        public MetroFramework.Controls.MetroComboBox CB_Modifier_Ville;
+        public MetroFramework.Controls.MetroComboBox CB_Modifier_Departement;
+        public MetroFramework.Controls.MetroComboBox CB_Modifier_Region;
+        public MetroFramework.Controls.MetroComboBox CB_Modifier_Pays;
+        private MetroFramework.Controls.MetroPanel metroPanel4;
+        private System.Windows.Forms.Button button2;
+        public MetroFramework.Controls.MetroComboBox CB_Modifier_Poste;
+        public MetroFramework.Controls.MetroLabel LBL_Modifier_IdEmp2;
+        public MetroFramework.Controls.MetroTextBox TXB_Modifier_Adresse;
+        public MetroFramework.Controls.MetroTextBox TXB_Modifier_Salaire;
+        public MetroFramework.Controls.MetroTextBox TXB_Modifier_Nom;
+        public MetroFramework.Controls.MetroTextBox TXB_Modifier_Prenom;
+        public MetroFramework.Controls.MetroTextBox TXB_Modifier_Tel;
+        public MetroFramework.Controls.MetroTextBox TXB_Modifier_Email;
+        public MetroFramework.Controls.MetroRadioButton RB_Modifier_F;
+        public MetroFramework.Controls.MetroRadioButton RB_Modifier_M;
     }
 }
