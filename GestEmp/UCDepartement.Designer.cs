@@ -213,6 +213,7 @@
             this.button6.Text = "      Afficher Tous";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             this.button6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button6_MouseDown);
             this.button6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button6_MouseUp);
             // 
@@ -264,7 +265,6 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-        //    this.pictureBox2.Image = global::GestEmp.Properties.Resources.search_icon51;
             this.pictureBox2.InitialImage = global::GestEmp.Properties.Resources.search_icon5;
             this.pictureBox2.Location = new System.Drawing.Point(313, 62);
             this.pictureBox2.Name = "pictureBox2";

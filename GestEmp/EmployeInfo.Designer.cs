@@ -31,14 +31,11 @@
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Info_NomPrenom = new MetroFramework.Controls.MetroLabel();
             this.Info_PosteNom = new MetroFramework.Controls.MetroLabel();
             this.Info_IdEmp = new MetroFramework.Controls.MetroLabel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.EmployClose = new System.Windows.Forms.PictureBox();
             this.metroTextBox13 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox12 = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
@@ -76,11 +73,16 @@
             this.metroLabel35 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.EmployClose = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.metroPanel6.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel4
@@ -132,18 +134,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = global::GestEmp.Properties.Resources.user4;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(50, 24);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(109, 109);
-            this.pictureBox4.TabIndex = 104;
-            this.pictureBox4.TabStop = false;
-            // 
             // Info_NomPrenom
             // 
             this.Info_NomPrenom.FontSize = MetroFramework.MetroLabelSize.Tall;
@@ -191,6 +181,7 @@
             // metroPanel6
             // 
             this.metroPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(213)))));
+            this.metroPanel6.Controls.Add(this.button5);
             this.metroPanel6.Enabled = false;
             this.metroPanel6.HorizontalScrollbarBarColor = true;
             this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
@@ -229,29 +220,6 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Image = global::GestEmp.Properties.Resources.list2;
-            this.pictureBox8.Location = new System.Drawing.Point(12, 2);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 158;
-            this.pictureBox8.TabStop = false;
-            // 
-            // EmployClose
-            // 
-            this.EmployClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EmployClose.Image = global::GestEmp.Properties.Resources.VisualEditor___Icon___Close___white_svg;
-            this.EmployClose.Location = new System.Drawing.Point(633, 7);
-            this.EmployClose.Name = "EmployClose";
-            this.EmployClose.Size = new System.Drawing.Size(26, 27);
-            this.EmployClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.EmployClose.TabIndex = 157;
-            this.EmployClose.TabStop = false;
-            this.EmployClose.Click += new System.EventHandler(this.EmployClose_Click);
             // 
             // metroTextBox13
             // 
@@ -820,6 +788,57 @@
             this.metroLabel3.UseCustomBackColor = true;
             this.metroLabel3.UseCustomForeColor = true;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button5.Location = new System.Drawing.Point(561, 10);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(101, 28);
+            this.button5.TabIndex = 187;
+            this.button5.Text = "Imprimer";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.h);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::GestEmp.Properties.Resources.list2;
+            this.pictureBox8.Location = new System.Drawing.Point(12, 2);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(36, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 158;
+            this.pictureBox8.TabStop = false;
+            // 
+            // EmployClose
+            // 
+            this.EmployClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EmployClose.Image = global::GestEmp.Properties.Resources.VisualEditor___Icon___Close___white_svg;
+            this.EmployClose.Location = new System.Drawing.Point(633, 7);
+            this.EmployClose.Name = "EmployClose";
+            this.EmployClose.Size = new System.Drawing.Size(26, 27);
+            this.EmployClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.EmployClose.TabIndex = 157;
+            this.EmployClose.TabStop = false;
+            this.EmployClose.Click += new System.EventHandler(this.EmployClose_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = global::GestEmp.Properties.Resources.user4;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.InitialImage = null;
+            this.pictureBox4.Location = new System.Drawing.Point(50, 24);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(109, 109);
+            this.pictureBox4.TabIndex = 104;
+            this.pictureBox4.TabStop = false;
+            // 
             // EmployeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -866,11 +885,12 @@
             this.Load += new System.EventHandler(this.EmployeInfo_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.metroPanel6.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -926,5 +946,6 @@
         public MetroFramework.Controls.MetroLabel Info_Poste;
         public MetroFramework.Controls.MetroLabel Info_NomPrenom;
         public MetroFramework.Controls.MetroLabel Info_PosteNom;
+        private System.Windows.Forms.Button button5;
     }
 }

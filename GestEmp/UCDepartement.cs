@@ -77,5 +77,10 @@ namespace GestEmp
         {
             button6.Size = new Size(129, 35);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

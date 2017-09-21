@@ -47,5 +47,17 @@ namespace GestEmp
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ImprimerEmploye IE = new ImprimerEmploye();
+            IE.ShowDialog();
+
+        }
+
+        private void h(object sender, EventArgs e)
+        {
+
+        }
     }
 }

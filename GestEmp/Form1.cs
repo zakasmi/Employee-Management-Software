@@ -277,7 +277,7 @@ namespace GestEmp
 
         private void button5_MouseUp(object sender, MouseEventArgs e)
         {
-            button5.Size = new Size(101, 28);
+           button5.Size = new Size(101, 28);
         }
 
         private void metroTabControl1_Click(object sender, EventArgs e)
@@ -294,7 +294,7 @@ namespace GestEmp
                 Fill_Form2_OriginalValues(f);
                 f.ShowDialog(this);
             }
-            else MessageBox.Show("s'il vous plaît choisir un Employé");
+            else MessageBox.Show("s'il vous plaît choisir un Employé !!!");
 
 
         }
@@ -781,6 +781,7 @@ namespace GestEmp
                                            select r.Field<string>("Dept_Nom")).First<string>();
             }
 
+            
         }
         string TypeRecherche = null;
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -804,18 +805,22 @@ namespace GestEmp
             }
             if (TypeRecherche == "Nom")
             {
-                s = "Nom ='" + TXB_Mod_Sup_Chercher.Text.ToString() + "' ";
+                s = "Nom like '" + TXB_Mod_Sup_Chercher.Text.ToString() + "%" + "' ";
                 //  MessageBox.Show(""+Provider.dt2.Rows.Count);
             }
             if (TypeRecherche == "Prenom")
             {
-                s = "Prenom = '" + TXB_Mod_Sup_Chercher.Text.ToString()+ "' ";
+                s = "Prenom like '" + TXB_Mod_Sup_Chercher.Text.ToString()+ "%" + "' ";
                 //  MessageBox.Show(""+Provider.dt2.Rows.Count);
             }
 
             datarow = Provider.ds.Tables["Employee"].Select(s);
             foreach (DataRow Drow in datarow)
-                Provider.dt1.ImportRow(Drow);
+                  Provider.dt1.ImportRow(Drow);
+           // Provider.dt1 = datarow.CopyToDataTable();
+            // you can use 
+           // Provider.dt2 = datarow.CopyToDataTable().DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
+
             Provider.dt2 = Provider.dt1.DefaultView.ToTable(true, "ID_EMP", "Nom", "Prenom", "Tel", "id_ville", "sexe", "adress");
             Provider.dt2.Columns["ID_EMP"].ColumnName = "Id Employé";
             Provider.dt2.Columns["id_ville"].ColumnName = "Ville";
@@ -850,7 +855,7 @@ namespace GestEmp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // --------------------------------------------------------------------
+            //supprimer// --------------------------------------------------------------------
             Provider.da = new SqlDataAdapter("select * from Employee ", Provider.cnx);
             string s = "(";
             bool nothing = true;
@@ -883,6 +888,7 @@ namespace GestEmp
                 DataRow[] data = Provider.ds.Tables["Employee"].Select("ID_EMP in " + s);
                 foreach (DataRow row in data)
                 {
+                   
                     //  MessageBox.Show(row[0].ToString()); 
                     Provider.ds.Tables["Employee"].Rows.Find(row[0].ToString()).Delete();
                 }
@@ -918,6 +924,17 @@ namespace GestEmp
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             Form1_Load(sender, e);
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ImprimerEmploye IE = new ImprimerEmploye();
+            IE.ShowDialog();
         }
     }
 }

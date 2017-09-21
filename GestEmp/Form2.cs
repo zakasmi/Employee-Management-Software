@@ -264,6 +264,7 @@ namespace GestEmp
             drow[0]["Date_Emb"] = DateTime.Parse(DTP_Modifier_DateE.Value.ToString());
             if (RB_Modifier_F.Checked) drow[0]["sexe"] = "F";
             else drow[0]["sexe"] = "M";
+
             drow[0]["Salaire"] = TXB_Modifier_Salaire.Text;
             drow[0]["Adress"] = TXB_Modifier_Adresse.Text;
             drow[0]["Id_pays"] = CB_Modifier_Pays.SelectedValue;
